@@ -6,7 +6,8 @@ import {
   faSearch,
   faPlusCircle,
   faMapMarkerAlt,
-  faClock
+  faClock,
+  faBriefcase
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/vue-fontawesome";
 
@@ -20,7 +21,8 @@ library.add(
   faSearch,
   faPlusCircle,
   faMapMarkerAlt,
-  faClock
+  faClock,
+  faBriefcase
 );
 
 Vue.component("font-awesome-icon", FontAwesomeIcon);

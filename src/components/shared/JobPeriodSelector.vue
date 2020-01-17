@@ -1,14 +1,11 @@
 <script>
-import { mapState, mapActions } from "vuex";
+import { mapState } from "vuex";
 import { PERIODS } from "@/store/constants";
 
 export default {
   name: "JobPeriodSelector",
   computed: {
     ...mapState(["activePeriod"])
-  },
-  methods: {
-    ...mapActions(["setPeriod"])
   },
   created() {
     this.PERIODS = PERIODS;
@@ -17,7 +14,7 @@ export default {
 </script>
 
 <template>
-  <section class="pt-8 pb-4">
+  <section class="pt-8 pb-2">
     <div class="flex flex-wrap justify-between">
       <div class="w-full lg:w-4/6">
         <ul
@@ -27,18 +24,11 @@ export default {
             v-for="period in PERIODS"
             :key="period.type"
             :class="{ 'bg-green-600 text-white': activePeriod === period.type }"
-            class="w-full py-3 text-center flex-1 md:w-1/3 mx-1 bg-gray-300 rounded"
+            class="text-center flex-1 md:w-1/3 mx-1 bg-gray-300 rounded"
           >
-            <!-- <button
-              href="#"
-              class="w-full py-2 rounded text-gray-800 font-semibold"
-            >
-              {{ period.text }}
-            </button> -->
-
             <router-link
               :to="`/${period.slug}`"
-              class="w-full block rounded font-semibold"
+              class="py-3 block font-semibold"
               >{{ period.text }}</router-link
             >
           </li>

@@ -23,10 +23,8 @@ export default {
       class="container mx-auto px-4 py-16 md:px-24 lg:px-32 xl:px-32 2xl:px-64 xl:py-20 w-full"
     >
       <span class="text-gray-100 font-medium text-2xl lg:text-3xl">Search</span>
-      <div
-        class="flex flex-wrap justify-between w-full -mx-2 mb-6 mt-3 items-center"
-      >
-        <div class="w-full md:w-2/5 px-2">
+      <div class="flex flex-wrap justify-between w-full mb-6 mt-3 items-center">
+        <div class="w-full md:w-2/5 flex-auto">
           <input
             class="appearance-none block w-full bg-white text-gray-700 font-bold rounded py-3 md:py-5 px-5 mb-3 md:mb-0 leading-tight focus:outline-none"
             id="grid-first-name"
@@ -34,7 +32,7 @@ export default {
             placeholder="Keywords"
           />
         </div>
-        <div class="w-full md:w-2/5 px-2">
+        <div class="w-full flex-auto md:w-2/5 md:pl-2">
           <input
             class="appearance-none block w-full b-white text-gray-700 font-bold rounded py-3 md:py-5 px-5 mb-3 md:mb-0 leading-tight focus:outline-none"
             id="grid-last-name"
@@ -42,7 +40,7 @@ export default {
             placeholder="Location"
           />
         </div>
-        <div class="w-full flex justify-end w-full md:w-2/12 px-2">
+        <div class="w-full flex justify-end md:w-2/12 xl:w-1/12 md:pl-2">
           <button
             v-on:click="getTitles"
             class="w-full text-white bg-green-600 py-3 md:py-5 rounded leading-tight focus:outline-none"
