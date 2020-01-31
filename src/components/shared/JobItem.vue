@@ -6,6 +6,8 @@ export default {
 };
 </script>
 
+<!-- Change this JobItem component, it looks so trash -->
+
 <template>
   <router-link to="#">
     <div
