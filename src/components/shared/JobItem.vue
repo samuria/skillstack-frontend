@@ -33,37 +33,39 @@ export default {
           <span class="text-xs md:text-base font-semibold">{{ jobType }}</span>
         </div>
       </div>
-      <div class="w-full flex justify-between w-full mt-3 items-center">
-        <div class="w-full flex-wrap text-xs -mt-1 -mx-1">
+      <div
+        class="w-full flex justify-between w-full mt-3 items-center text-green-700"
+      >
+        <div class="w-full flex-wrap text-xs -mx-1">
           <router-link
             to="/tag"
-            class="border border-gray-400 rounded px-1 mt-1 mx-1 text-green-700 hover:text-green-900"
+            class="border border-gray-400 rounded px-1 mx-1 text-center hover:text-green-900"
           >
-            Axure
+            axure
           </router-link>
           <router-link
             to="#"
-            class="border border-gray-400 rounded px-1 mt-1 text-green-600 hover:text-green-900"
+            class="border border-gray-400 rounded px-1 hover:text-green-900"
           >
-            Figma
+            figma
           </router-link>
           <router-link
             to="#"
-            class="border border-gray-400 rounded px-1 mt-1 mx-1 text-green-600 hover:text-green-900"
+            class="border border-gray-400 rounded px-1 mx-1 hover:text-green-900"
           >
-            Sketch
+            sketch
           </router-link>
           <router-link
             to="#"
-            class="border border-gray-400 rounded px-1 mt-1 text-green-600 hover:text-green-900"
+            class="border border-gray-400 rounded ml-1 px-1 hover:text-green-900"
           >
-            TailwindCSS
+            tailwindcss
           </router-link>
           <router-link
             to="#"
-            class="border border-gray-400 rounded px-1 mt-1 mx-1 text-green-600 hover:text-green-900"
+            class="border border-gray-400 rounded px-1 mx-1 sm:mx-0 text-green-600 hover:text-green-900"
           >
-            Sketch
+            frontend
           </router-link>
         </div>
         <div
