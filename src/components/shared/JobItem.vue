@@ -33,6 +33,8 @@ export default {
           <span class="text-xs md:text-base font-semibold">{{ jobType }}</span>
         </div>
       </div>
+
+      <!-- TODO: Make this list of tags into its own component -->
       <div
         class="w-full flex justify-between w-full mt-3 items-center text-green-700"
       >
