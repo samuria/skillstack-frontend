@@ -1,10 +1,13 @@
 <script>
 import CKEditor from '@ckeditor/ckeditor5-vue';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import LocationSelect from '../shared/LocationSelect';
+
 export default {
   name: 'AddJob',
   components: {
-    ckeditor: CKEditor.component
+    ckeditor: CKEditor.component,
+    LocationSelect
   },
   data() {
     return {
@@ -12,6 +15,9 @@ export default {
       editorData: '<p>Content of the editor.</p>',
       editorConfig: {
         // The configuration of the editor.
+      },
+      formData: {
+        location: ''
       }
     };
   }
@@ -69,6 +75,18 @@ export default {
             v-model="editorData"
             :config="editorConfig"
           ></ckeditor>
+        </div>
+      </div>
+      <div class="my-6 w-full">
+        <div class="w-full">
+          <h5 class="pb-3">Location</h5>
+          <location-select
+            v-model="formData.location"
+            :value="formData.location"
+            :show-all="true"
+            :searchable="true"
+          />
+          <p></p>
         </div>
       </div>
     </div>
