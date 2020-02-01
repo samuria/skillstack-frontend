@@ -43,31 +43,31 @@ export default {
         <div class="w-full flex-wrap text-xs -mx-1">
           <router-link
             to="/tag"
-            class="border border-gray-400 rounded px-1 mx-1 text-center hover:text-green-900"
+            class="border border-gray-400 rounded px-1 ml-1 text-center hover:text-green-900"
           >
             axure
           </router-link>
           <router-link
             to="#"
-            class="border border-gray-400 rounded px-1 hover:text-green-900"
+            class="border border-gray-400 rounded px-1 ml-1 hover:text-green-900"
           >
             figma
           </router-link>
           <router-link
             to="#"
-            class="border border-gray-400 rounded px-1 mx-1 hover:text-green-900"
+            class="border border-gray-400 rounded px-1 ml-1 hover:text-green-900"
           >
             sketch
           </router-link>
           <router-link
             to="#"
-            class="border border-gray-400 rounded ml-1 px-1 hover:text-green-900"
+            class="border border-gray-400 rounded px-1 ml-1 hover:text-green-900"
           >
             tailwindcss
           </router-link>
           <router-link
             to="#"
-            class="border border-gray-400 rounded px-1 mx-1 sm:mx-0 text-green-600 hover:text-green-900"
+            class="border border-gray-400 rounded px-1 ml-1 text-green-600 hover:text-green-900"
           >
             frontend
           </router-link>
