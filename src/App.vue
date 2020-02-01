@@ -14,8 +14,8 @@ export default {
 <template>
   <main id="app">
     <div id="main-wrapper">
-      <app-header></app-header>
-      <app-banner></app-banner>
+      <app-header />
+      <app-banner :with-banner="$route.meta.hasBanner" />
       <router-view />
     </div>
   </main>

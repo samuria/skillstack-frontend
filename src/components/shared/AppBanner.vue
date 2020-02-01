@@ -3,6 +3,13 @@ import axios from "axios";
 
 export default {
   name: "AppBanner",
+  props: {
+    withBanner: {
+      type: Boolean,
+      required: false,
+      default: false
+    }
+  },
   methods: {
     getTitles: async () => {
       try {
@@ -18,7 +25,10 @@ export default {
 </script>
 
 <template>
-  <section class="banner relative min-w-full bg-cover z-50 bg-no-repeat">
+  <section
+    class="banner relative min-w-full bg-cover z-50 bg-no-repeat"
+    v-if="withBanner"
+  >
     <div
       class="container mx-auto px-4 py-16 md:px-24 lg:px-32 xl:px-32 2xl:px-64 xl:py-20 w-full"
     >

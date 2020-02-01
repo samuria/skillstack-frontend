@@ -1,19 +1,18 @@
-import Vue from "vue";
-import Meta from "vue-meta";
-import Router from "vue-router";
-import Home from "@/components/pages/Home";
-import AddJob from "@/components/pages/AddJob";
-import { PERIODS } from "../store/constants";
+import Vue from 'vue';
+import Meta from 'vue-meta';
+import Router from 'vue-router';
+import Home from '@/components/pages/Home';
+import { PERIODS } from '../store/constants';
 
 Vue.use(Router);
 Vue.use(Meta);
 
 const router = new Router({
-  mode: "history",
+  mode: 'history',
   routes: [
     {
-      path: "/",
-      name: "Home",
+      path: '/',
+      name: 'Home',
       component: Home,
       meta: {
         hasBanner: true
@@ -28,9 +27,9 @@ const router = new Router({
       }))
     },
     {
-      path: "/add-job",
-      name: "AddJob",
-      component: AddJob
+      path: '/add-job',
+      name: 'AddJob',
+      component: () => import('@/components/pages/AddJob')
     }
   ]
 });
