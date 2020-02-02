@@ -13,3 +13,25 @@ export const PERIODS = [
   { type: 'weekly', text: 'This week', slug: 'week' },
   { type: 'monthly', text: 'This month', slug: 'month', isDefault: true }
 ];
+export const JOB_TYPES_FOR_DROPDOWN = [
+  {
+    id: 1,
+    text: 'Full time'
+  },
+  {
+    id: 2,
+    text: 'Part time'
+  },
+  {
+    id: 3,
+    text: 'Intern'
+  },
+  {
+    id: 4,
+    text: 'Casual'
+  },
+  {
+    id: 5,
+    text: 'Freelance'
+  }
+];

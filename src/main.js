@@ -7,7 +7,8 @@ import {
   faPlusCircle,
   faMapMarkerAlt,
   faClock,
-  faBriefcase
+  faBriefcase,
+  faArrowCircleRight
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import Multiselect from 'vue-multiselect';
@@ -23,7 +24,8 @@ library.add(
   faPlusCircle,
   faMapMarkerAlt,
   faClock,
-  faBriefcase
+  faBriefcase,
+  faArrowCircleRight
 );
 
 Vue.component('font-awesome-icon', FontAwesomeIcon);

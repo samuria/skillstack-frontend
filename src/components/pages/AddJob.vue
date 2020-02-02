@@ -2,6 +2,7 @@
 import CKEditor from '@ckeditor/ckeditor5-vue';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import LocationSelect from '../shared/LocationSelect';
+import { JOB_TYPES_FOR_DROPDOWN } from '@/store/constants';
 
 export default {
   name: 'AddJob',
@@ -18,7 +19,9 @@ export default {
       },
       formData: {
         location: ''
-      }
+      },
+      type: JOB_TYPES_FOR_DROPDOWN[0],
+      typeOptions: JOB_TYPES_FOR_DROPDOWN
     };
   }
 };
@@ -48,46 +51,149 @@ export default {
       </div>
 
       <div class="mt-6 w-full">
-        <div class="w-full">
-          <h5 class="pb-3">Email address</h5>
-          <input
-            type="text"
-            class="bg-gray-100 text-gray-700 border border-gray-400 py-3 px-5 rounded w-full outline-none"
-            placeholder="example@domain.com"
-          />
-        </div>
+        <h5 class="pb-3">Email address</h5>
+        <input
+          type="text"
+          class="bg-gray-100 text-gray-700 border border-gray-400 py-3 px-5 rounded w-full outline-none"
+          placeholder="example@domain.com"
+        />
+      </div>
+
+      <div class="my-6 w-full">
+        <h5 class="pb-3">Position</h5>
+        <input
+          type="text"
+          class="bg-gray-100 text-gray-700 border border-gray-400 py-3 px-5 rounded w-full outline-none"
+          placeholder="e.g. Front End Developer"
+        />
+      </div>
+
+      <div class="my-6 w-full">
+        <h5 class="pb-3">Job description</h5>
+        <ckeditor
+          :editor="editor"
+          v-model="editorData"
+          :config="editorConfig"
+        ></ckeditor>
+      </div>
+
+      <div class="my-6 w-full">
+        <h5 class="pb-3">Location</h5>
+        <location-select
+          v-model="formData.location"
+          :value="formData.location"
+          :show-all="true"
+          :searchable="true"
+        />
+        <p class="text-sm mt-3 mb-10 text-gray-600">
+          If the role allows the possibility of being remote, please choose
+          Remote.
+        </p>
+      </div>
+
+      <div class="my-6 w-full">
+        <h5 class="pb-3">Job type</h5>
+        <multiselect
+          v-model="type"
+          :options="typeOptions"
+          label="text"
+          :searchable="false"
+          :close-on-select="true"
+        />
+      </div>
+
+      <div class="my-6 w-full">
+        <h5 class="pb-3">Tags</h5>
+        <input
+          type="text"
+          class="bg-gray-100 text-gray-700 border border-gray-400 py-3 px-5 rounded w-full outline-none"
+        />
+        <p class="text-sm mt-3 mb-10 text-gray-600">
+          You can select the relevant skills or technologies required for this
+          position from the list, or add your own by separating them with
+          commas. You may add up to 8 tags per listing.<br /><br />
+          Some examples of tags include
+          <span
+            class="border border-red-200 rounded bg-red-100 text-red-600 px-1"
+            >frontend</span
+          >,
+          <span
+            class="border border-red-200 rounded bg-red-100 text-red-600 px-1"
+            >backend</span
+          >,
+          <span
+            class="border border-red-200 rounded bg-red-100 text-red-600 px-1"
+            >mobile</span
+          >,
+          <span
+            class="border border-red-200 rounded bg-red-100 text-red-600 px-1"
+            >react</span
+          >,
+          <span
+            class="border border-red-200 rounded bg-red-100 text-red-600 px-1"
+            >.net</span
+          >. Choosing the right and effective tags will increase the chances of
+          your listing to appear among the 'Similar Listings' section on the
+          listing details page.
+        </p>
+      </div>
+
+      <div class="my-10 w-full">
+        <h3 class="text-2xl">Company Information</h3>
+        <hr class="mt-5" />
       </div>
       <div class="my-6 w-full">
-        <div class="w-full">
-          <h5 class="pb-3">Position</h5>
-          <input
-            type="text"
-            class="bg-gray-100 text-gray-700 border border-gray-400 py-3 px-5 rounded w-full outline-none"
-            placeholder="e.g. Front End Developer"
-          />
-        </div>
+        <h5 class="pb-3">Company name</h5>
+        <input
+          type="text"
+          class="bg-gray-100 text-gray-700 border border-gray-400 py-3 px-5 rounded w-full outline-none"
+        />
       </div>
       <div class="my-6 w-full">
-        <div class="w-full">
-          <h5 class="pb-3">Job description</h5>
-          <ckeditor
-            :editor="editor"
-            v-model="editorData"
-            :config="editorConfig"
-          ></ckeditor>
-        </div>
+        <h5 class="pb-3">Website</h5>
+        <input
+          type="text"
+          class="bg-gray-100 text-gray-700 border border-gray-400 py-3 px-5 rounded w-full outline-none"
+          placeholder="https://"
+        />
       </div>
       <div class="my-6 w-full">
-        <div class="w-full">
-          <h5 class="pb-3">Location</h5>
-          <location-select
-            v-model="formData.location"
-            :value="formData.location"
-            :show-all="true"
-            :searchable="true"
-          />
-          <p></p>
-        </div>
+        <h5 class="pb-3">Logo URL</h5>
+        <input
+          type="text"
+          class="bg-gray-100 text-gray-700 border border-gray-400 py-3 px-5 rounded w-full outline-none"
+          placeholder="https://"
+        />
+        <p class="text-sm mt-3 mb-10 text-gray-600">
+          The logo will be displayed as a square on the job description page.
+        </p>
+      </div>
+      <div class="my-6 w-full">
+        <h5 class="pb-3">
+          Twitter <span class="text-gray-500">(optional)</span>
+        </h5>
+        <input
+          type="text"
+          class="bg-gray-100 text-gray-700 border border-gray-400 py-3 px-5 rounded w-full outline-none"
+          placeholder="@twitter"
+        />
+      </div>
+      <div class="my-6 w-full">
+        <h5 class="pb-3">
+          LinkedIn profile <span class="text-gray-500">(optional)</span>
+        </h5>
+        <input
+          type="text"
+          class="bg-gray-100 text-gray-700 border border-gray-400 py-3 px-5 rounded w-full outline-none"
+          placeholder="https://"
+        />
+      </div>
+      <div class="flex justify-end my-6 w-full">
+        <button
+          class="items-center bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded"
+        >
+          Preview <font-awesome-icon icon="arrow-circle-right" class="ml-1" />
+        </button>
       </div>
     </div>
   </div>
