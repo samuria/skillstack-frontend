@@ -12,6 +12,7 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import Multiselect from 'vue-multiselect';
+import BounceLoader from 'vue-loading-spinner/src/components/DoubleBounce';
 
 import App from './App';
 import store from './store';
@@ -30,6 +31,7 @@ library.add(
 
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 Vue.component('multiselect', Multiselect);
+Vue.component('bounce-loader', BounceLoader);
 
 Vue.config.productionTip = false;
 
