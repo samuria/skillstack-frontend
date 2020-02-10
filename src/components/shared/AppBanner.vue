@@ -193,7 +193,7 @@ export default {
 </template>
 
 <style scoped>
-@media only screen and (min-width: 760px) {
+@media only screen and (min-width: 768px) {
   .col {
     padding-left: 14px;
   }

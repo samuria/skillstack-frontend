@@ -53,7 +53,7 @@ export default {
   </section> -->
 
   <a-row type="flex" justify="space-between">
-    <a-col>
+    <a-col span="24" :md="{ span: '18' }">
       <a-button-group>
         <router-link
           v-for="period in PERIODS"
@@ -68,10 +68,22 @@ export default {
         </router-link>
       </a-button-group>
     </a-col>
-    <a-col>
-      <a-button type="primary" size="large">See all posts</a-button>
+    <a-col span="24" :md="{ span: '6' }">
+      <a-button
+        type="primary"
+        size="large"
+        :style="{ width: '100%' }"
+        class="btn-see-all-posts"
+        >See all posts</a-button
+      >
     </a-col>
   </a-row>
 </template>
 
-<style scoped></style>
+<style scoped>
+@media only screen and (max-width: 768px) {
+  .btn-see-all-posts {
+    margin-top: 10px;
+  }
+}
+</style>

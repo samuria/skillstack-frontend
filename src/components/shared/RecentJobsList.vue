@@ -1,13 +1,13 @@
 <script>
-import { mapState, mapActions } from 'vuex';
-// import JobList from './JobList';
-import JobPeriodSelector from './JobPeriodSelector';
-import { PERIODS } from '@/store/constants';
+import { mapState, mapActions } from "vuex";
+import JobList from "./JobList";
+import JobPeriodSelector from "./JobPeriodSelector";
+import { PERIODS } from "@/store/constants";
 
 export default {
-  name: 'RecentJobsList',
+  name: "RecentJobsList",
   components: {
-    // JobList,
+    JobList,
     JobPeriodSelector
   },
   data() {
@@ -16,10 +16,10 @@ export default {
     };
   },
   computed: {
-    ...mapState(['recentPosts', 'activePeriod'])
+    ...mapState(["recentPosts", "activePeriod"])
   },
   methods: {
-    ...mapActions(['setPeriod']),
+    ...mapActions(["setPeriod"]),
 
     setPeriodHandler() {
       const period = PERIODS.find(p => p.type === this.$route.meta.period);
@@ -51,10 +51,12 @@ export default {
     </div>
   </div> -->
   <a-row type="flex" justify="space-between">
-    <a-col :span="18"
+    <a-col :span="24" :md="{ span: '18' }"
       ><h2>Latest posts</h2>
-      <job-period-selector
-    /></a-col>
+      <job-period-selector />
+
+      <job-list :is-loading="isLoading" :posts="recentPosts" />
+    </a-col>
     <a-col :span="5"><h2>Featured posts</h2></a-col>
   </a-row>
 </template>
