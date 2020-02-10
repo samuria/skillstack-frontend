@@ -1,5 +1,5 @@
 <script>
-import { mapState } from 'vuex';
+import { mapState, mapActions } from 'vuex';
 import { PERIODS } from '@/store/constants';
 
 export default {
@@ -9,6 +9,13 @@ export default {
   },
   created() {
     this.PERIODS = PERIODS;
+  },
+  methods: {
+    ...mapActions(['setPeriod'])
+
+    // setActiveButton() {
+    //   if
+    // }
   }
 };
 </script>
@@ -44,11 +51,27 @@ export default {
       </div>
     </div>
   </section> -->
-  <a-button-group>
-    <a-button size="large" type="primary">Today</a-button>
-    <a-button size="large">Week</a-button>
-    <a-button size="large">Month</a-button>
-  </a-button-group>
+
+  <a-row type="flex" justify="space-between">
+    <a-col>
+      <a-button-group>
+        <router-link
+          v-for="period in PERIODS"
+          :key="period.type"
+          :to="period.slug"
+        >
+          <a-button
+            :type="activePeriod === period.type ? 'primary' : 'default'"
+            size="large"
+            >{{ period.text }}</a-button
+          >
+        </router-link>
+      </a-button-group>
+    </a-col>
+    <a-col>
+      <a-button type="primary" size="large">See all posts</a-button>
+    </a-col>
+  </a-row>
 </template>
 
 <style scoped></style>

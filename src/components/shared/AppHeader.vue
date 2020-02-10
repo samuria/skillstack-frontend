@@ -22,7 +22,7 @@ export default {
         size="large"
         icon="plus-circle"
         class="btn-post-ad"
-        ><span class="btn-post-ad-text">Post an ad</span></a-button
+        ><span class="btn-post-ad-text">New post</span></a-button
       >
     </div>
   </a-layout-header>

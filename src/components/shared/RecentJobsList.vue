@@ -50,10 +50,13 @@ export default {
       <h3 class="text-xl text-gray-700">Featured posts</h3>
     </div>
   </div> -->
-  <div>
-    <h2>Latest ads</h2>
-    <job-period-selector />
-  </div>
+  <a-row type="flex" justify="space-between">
+    <a-col :span="18"
+      ><h2>Latest posts</h2>
+      <job-period-selector
+    /></a-col>
+    <a-col :span="5"><h2>Featured posts</h2></a-col>
+  </a-row>
 </template>
 
 <style></style>
