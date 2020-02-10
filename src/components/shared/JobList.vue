@@ -26,7 +26,7 @@ export default {
 </script>
 
 <template>
-  <div>
+  <div style="margin-top: 20px;">
     <job-item v-for="post in posts" :key="post.slug" :post="post" />
   </div>
 </template>

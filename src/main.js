@@ -23,7 +23,9 @@ import {
   Row,
   Col,
   Select,
-  Tag
+  Tag,
+  Card,
+  Icon
 } from 'ant-design-vue';
 
 import App from './App';
@@ -54,6 +56,8 @@ Vue.use(Row);
 Vue.use(Col);
 Vue.use(Select);
 Vue.use(Tag);
+Vue.use(Card);
+Vue.use(Icon);
 
 Vue.config.productionTip = false;
 

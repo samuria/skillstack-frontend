@@ -9,7 +9,7 @@ export default {
 <!-- Change this JobItem component, it looks so trash -->
 
 <template>
-  <router-link to="#">
+  <!--<router-link to="#">
     <div
       class="rounded px-4 mt-2 py-6 border border-gray-300 hover:border-gray-400 hover:bg-gray-100"
     >
@@ -35,8 +35,6 @@ export default {
           <span class="text-xs md:text-base font-semibold">{{ jobType }}</span>
         </div>
       </div>
-
-      <!-- TODO: Make this list of tags into its own component -->
       <div
         class="w-full flex justify-between w-full mt-3 items-center text-green-700"
       >
@@ -86,7 +84,41 @@ export default {
         </div>
       </div>
     </div>
-  </router-link>
+  </router-link>-->
+
+  <a-card hoverable :style="{ marginTop: '10px' }">
+    <a-row type="flex" justify="space-between">
+      <a-col span="24" :md="{ span: '4' }">
+        <img
+          class="company-image"
+          :src="company.logo"
+          :alt="company.alt"
+          width="60"
+        />
+      </a-col>
+      <a-col span="24" :md="{ span: '10' }">
+        <h3>{{ post.position }}</h3>
+        <span><a-icon type="bank" /> {{ company.name }} </span>
+        <span><a-icon type="environment" /> {{ post.location }}</span>
+      </a-col>
+      <a-col span="24" :md="{ span: '10' }" class="job-item-last-column">
+        <a-tag color="#2db7f5">{{ jobType }}</a-tag>
+      </a-col>
+    </a-row>
+  </a-card>
 </template>
 
-<style></style>
+<style scoped>
+@media only screen and (max-width: 768px) {
+  .company-image {
+    display: flex;
+    margin: 0 auto;
+    margin-bottom: 10px;
+  }
+}
+
+.job-item-last-column {
+  display: flex;
+  justify-content: flex-end;
+}
+</style>

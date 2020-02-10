@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: 'AppHeader'
+  name: "AppHeader"
 };
 </script>
 
@@ -33,7 +33,7 @@ export default {
   margin-left: 10px;
 }
 
-@media only screen and (max-width: 760px) {
+@media only screen and (max-width: 768px) {
   .btn-post-ad-text,
   .btn-subscribe-text {
     display: none;
