@@ -1,11 +1,11 @@
 <script>
-import { mapState } from "vuex";
-import { PERIODS } from "@/store/constants";
+import { mapState } from 'vuex';
+import { PERIODS } from '@/store/constants';
 
 export default {
-  name: "JobPeriodSelector",
+  name: 'JobPeriodSelector',
   computed: {
-    ...mapState(["activePeriod"])
+    ...mapState(['activePeriod'])
   },
   created() {
     this.PERIODS = PERIODS;
@@ -14,7 +14,7 @@ export default {
 </script>
 
 <template>
-  <section class="pt-8 pb-2">
+  <!-- <section class="pt-8 pb-2">
     <div class="flex flex-wrap justify-between">
       <div class="w-full lg:w-4/6">
         <ul
@@ -43,7 +43,12 @@ export default {
         >
       </div>
     </div>
-  </section>
+  </section> -->
+  <a-button-group>
+    <a-button size="large" type="primary">Today</a-button>
+    <a-button size="large">Week</a-button>
+    <a-button size="large">Month</a-button>
+  </a-button-group>
 </template>
 
 <style scoped></style>
