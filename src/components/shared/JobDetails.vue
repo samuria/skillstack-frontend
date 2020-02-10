@@ -42,7 +42,7 @@ export default {
     itemscope
     itemtype="http://schema.org/JobPosting"
   >
-    Hi<bounce-loader />
+    Hi<bounce-loader v-if="isLoading" />
   </div>
 </template>
 
