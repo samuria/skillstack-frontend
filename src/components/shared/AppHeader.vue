@@ -38,6 +38,16 @@ export default {
   .btn-subscribe-text {
     display: none;
   }
+
+  .app-header {
+    padding: 0 20px;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .app-header {
+    padding: 0 50px;
+  }
 }
 
 .app-header {
