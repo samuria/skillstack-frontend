@@ -54,24 +54,23 @@ export default {
 
   <a-row type="flex" justify="space-between">
     <a-col span="24" :md="{ span: '18' }">
-      <a-button-group>
-        <router-link
-          v-for="period in PERIODS"
-          :key="period.type"
-          :to="period.slug"
-        >
-          <a-button
-            :type="activePeriod === period.type ? 'primary' : 'default'"
-            size="large"
-            >{{ period.text }}</a-button
-          >
-        </router-link>
-      </a-button-group>
+      <router-link
+        v-for="(period, index) in PERIODS"
+        :key="period.type"
+        :to="period.slug"
+      >
+        <a-button
+          :type="activePeriod === period.type ? 'primary' : 'default'"
+          >{{ period.text }}</a-button
+        ><a-divider
+          type="vertical"
+          v-if="index != Object.keys(PERIODS).length - 1"
+        />
+      </router-link>
     </a-col>
-    <a-col span="24" :md="{ span: '6' }">
+    <a-col span="24" :md="{ span: '4' }">
       <a-button
         type="primary"
-        size="large"
         :style="{ width: '100%' }"
         class="btn-see-all-posts"
         >See all posts</a-button

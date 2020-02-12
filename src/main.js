@@ -25,7 +25,9 @@ import {
   Select,
   Tag,
   Card,
-  Icon
+  Icon,
+  Divider,
+  Tabs
 } from 'ant-design-vue';
 
 import App from './App';
@@ -58,6 +60,8 @@ Vue.use(Select);
 Vue.use(Tag);
 Vue.use(Card);
 Vue.use(Icon);
+Vue.use(Divider);
+Vue.use(Tabs);
 
 Vue.config.productionTip = false;
 

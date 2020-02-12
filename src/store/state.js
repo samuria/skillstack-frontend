@@ -60,7 +60,7 @@ export default {
       type: 1,
       status: 1,
       is_featured: 0,
-      created_at: '2020-01-14 09:07:58',
+      created_at: '2020-02-12 09:07:58',
       updated_at: '2020-01-14 12:35:00',
       post_url:
         'https://kodilan.com/ilanlar/interaktif-kredi-yazilim-gelistirme-uzmani',

@@ -1,8 +1,8 @@
 <script>
-import JobItem from "./JobItem";
+import JobItem from './JobItem';
 
 export default {
-  name: "JobList",
+  name: 'JobList',
   props: {
     isLoading: {
       type: Boolean,
@@ -16,7 +16,7 @@ export default {
     notFoundText: {
       type: String,
       required: false,
-      default: "No jobs found."
+      default: 'No jobs found.'
     }
   },
   components: {
@@ -26,7 +26,7 @@ export default {
 </script>
 
 <template>
-  <div style="margin-top: 20px;">
+  <div>
     <job-item v-for="post in posts" :key="post.slug" :post="post" />
   </div>
 </template>

@@ -1,7 +1,7 @@
 <script>
-import jobDetail from "@/mixins/jobDetail";
+import jobDetail from '@/mixins/jobDetail';
 export default {
-  name: "JobItem",
+  name: 'JobItem',
   mixins: [jobDetail]
 };
 </script>
@@ -88,7 +88,7 @@ export default {
 
   <a-card hoverable :style="{ marginTop: '10px' }">
     <a-row type="flex" justify="space-between">
-      <a-col span="24" :md="{ span: '4' }">
+      <a-col span="24" :md="{ span: '3' }">
         <img
           class="company-image"
           :src="company.logo"
@@ -98,11 +98,19 @@ export default {
       </a-col>
       <a-col span="24" :md="{ span: '10' }">
         <h3>{{ post.position }}</h3>
-        <span><a-icon type="bank" /> {{ company.name }} </span>
-        <span><a-icon type="environment" /> {{ post.location }}</span>
+        <span class="job-item-details"
+          ><a-icon type="bank" /> {{ company.name }}
+        </span>
+        <span class="job-item-details"
+          ><a-icon type="environment" /> {{ post.location }}</span
+        >
+        <div>
+          <a-tag v-for="tag in post.tags" :key="tag.name">{{ tag.name }}</a-tag>
+        </div>
       </a-col>
       <a-col span="24" :md="{ span: '10' }" class="job-item-last-column">
-        <a-tag color="#2db7f5">{{ jobType }}</a-tag>
+        <a-button type="dashed">{{ jobType }}</a-button>
+        <span class="text-time-ago">{{ timeago }}</span>
       </a-col>
     </a-row>
   </a-card>
@@ -114,11 +122,21 @@ export default {
     display: flex;
     margin: 0 auto;
     margin-bottom: 10px;
+    width: 100px;
   }
 }
 
 .job-item-last-column {
   display: flex;
-  justify-content: flex-end;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.job-item-details {
+  @apply text-gray-600;
+}
+
+.text-time-ago {
+  @apply text-gray-600;
 }
 </style>

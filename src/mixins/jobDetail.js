@@ -1,7 +1,8 @@
-import TimeAgo from "javascript-time-ago";
-import { JOB_TYPE_MAP } from "../store/constants";
+import TimeAgo from 'javascript-time-ago';
+import * as timeago from 'timeago.js';
+import { JOB_TYPE_MAP } from '../store/constants';
 
-import en from "javascript-time-ago/locale/en";
+import en from 'javascript-time-ago/locale/en';
 TimeAgo.addLocale(en);
 
 export default {
@@ -19,24 +20,24 @@ export default {
       return this.post.company;
     },
     jobType() {
-      return JOB_TYPE_MAP[this.post.type] || "";
+      return JOB_TYPE_MAP[this.post.type] || '';
     },
     timeago() {
-      const timeAgo = new TimeAgo("en-US");
+      // const timeAgo = new TimeAgo('en-US');
 
-      const timeSincePosted = timeAgo.format(
-        new Date(this.post.created_at) - 2 * 60 * 60 * 1000
-      );
+      // const timeSincePosted = timeAgo.format(
+      //   new Date(this.post.created_at) - 2 * 60 * 60 * 1000
+      // );
 
-      return timeSincePosted;
+      return timeago.format(this.post.created_at);
     },
     postTypeClassName() {
       const CLASS_MAP = {
-        0: "full-time",
-        1: "full-time",
-        2: "part-time",
-        3: "internship",
-        4: "freelance"
+        0: 'full-time',
+        1: 'full-time',
+        2: 'part-time',
+        3: 'internship',
+        4: 'freelance'
       };
 
       return {

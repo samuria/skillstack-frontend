@@ -1,7 +1,7 @@
 <script>
-import RecentJobsList from "../shared/RecentJobsList";
+import RecentJobsList from '../shared/RecentJobsList';
 export default {
-  name: "Home",
+  name: 'Home',
   components: {
     RecentJobsList
   }

@@ -1,9 +1,9 @@
 <script>
-import AppHeader from "./components/shared/AppHeader";
-import AppBanner from "./components/shared/AppBanner";
+import AppHeader from './components/shared/AppHeader';
+import AppBanner from './components/shared/AppBanner';
 
 export default {
-  name: "App",
+  name: 'App',
   components: {
     AppHeader,
     AppBanner
@@ -12,6 +12,13 @@ export default {
 </script>
 
 <template>
+  <!-- <main id="app">
+    <div id="main-wrapper">
+      <app-header />
+      <app-banner :with-banner="$route.meta.hasBanner" />
+      <router-view />
+    </div>
+  </main> -->
   <a-layout class="layout" theme="light">
     <app-header />
     <app-banner :with-banner="$route.meta.hasBanner" />

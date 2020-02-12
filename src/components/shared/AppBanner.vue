@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: "AppBanner",
+  name: 'AppBanner',
   props: {
     withBanner: {
       type: Boolean,
@@ -24,10 +24,10 @@ export default {
       console.log(`selected ${value}`);
     },
     handleBlur() {
-      console.log("blur");
+      console.log('blur');
     },
     handleFocus() {
-      console.log("focus");
+      console.log('focus');
     },
     filterOption(input, option) {
       return (
@@ -42,9 +42,16 @@ export default {
 
 <template>
   <a-layout-content class="banner">
-    <div :style="{ background: '#fff', padding: '24px', minHeight: '224px' }">
+    <div
+      :style="{
+        padding: '24px',
+        minHeight: '224px',
+        maxWidth: '1920px',
+        margin: '0 auto'
+      }"
+    >
       <div class="search-box">
-        <h2>Search</h2>
+        <h2 style="color: white">Search</h2>
         <a-row>
           <a-col :md="{ span: '11' }"
             ><a-input
@@ -113,7 +120,7 @@ export default {
 }
 
 .banner {
-  background-image: url("../../assets/images/banner.jpg");
+  background-image: url('../../assets/images/banner.jpg');
   max-height: 500px;
   background-position: 50%;
   position: relative;
@@ -123,7 +130,7 @@ export default {
 }
 
 .banner::before {
-  content: "";
+  content: '';
   position: absolute;
   left: 0;
   right: 0;
