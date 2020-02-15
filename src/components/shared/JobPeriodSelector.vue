@@ -1,17 +1,17 @@
 <script>
-import { mapState, mapActions } from 'vuex';
-import { PERIODS } from '@/store/constants';
+import { mapState, mapActions } from "vuex";
+import { PERIODS } from "@/store/constants";
 
 export default {
-  name: 'JobPeriodSelector',
+  name: "JobPeriodSelector",
   computed: {
-    ...mapState(['activePeriod'])
+    ...mapState(["activePeriod"])
   },
   created() {
     this.PERIODS = PERIODS;
   },
   methods: {
-    ...mapActions(['setPeriod'])
+    ...mapActions(["setPeriod"])
 
     // setActiveButton() {
     //   if

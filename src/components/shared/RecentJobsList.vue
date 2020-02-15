@@ -1,11 +1,11 @@
 <script>
-import { mapState, mapActions } from 'vuex';
-import JobList from './JobList';
+import { mapState, mapActions } from "vuex";
+import JobList from "./JobList";
 // import JobPeriodSelector from './JobPeriodSelector';
-import { PERIODS } from '@/store/constants';
+import { PERIODS } from "@/store/constants";
 
 export default {
-  name: 'RecentJobsList',
+  name: "RecentJobsList",
   components: {
     JobList
     // JobPeriodSelector
@@ -16,16 +16,28 @@ export default {
     };
   },
   computed: {
-    ...mapState(['recentPosts', 'activePeriod'])
+    ...mapState(["recentPosts", "activePeriod"])
   },
   methods: {
-    ...mapActions(['setPeriod']),
+    ...mapActions(["fetchRecentJobs", "setPeriod"]),
+    fetch() {
+      this.isLoading = true;
+
+      this.fetchRecentJobs().then(() => {
+        this.isLoading = false;
+      });
+    },
 
     setPeriodHandler() {
       const period = PERIODS.find(p => p.type === this.$route.meta.period);
       if (period) {
         this.setPeriod(period.type);
       }
+      this.fetch();
+    },
+
+    periodChange(key) {
+      this.$router.push(key);
     }
   },
   watch: {
@@ -54,13 +66,18 @@ export default {
   <a-row type="flex" justify="space-between">
     <a-col :span="24" :md="{ span: '18' }"
       ><h2>Latest posts</h2>
-      <a-tabs>
+      <a-tabs @change="periodChange" type="card" defaultActiveKey="month">
         <a-tab-pane
           v-for="period in PERIODS"
-          :key="period.type"
+          :key="period.slug"
           :tab="period.text"
         >
-          <job-list :is-loading="isLoading" :posts="recentPosts" />
+          <a-spin v-if="isLoading" size="large" tip="Loading" class="spinner" />
+          <a-empty
+            v-else-if="recentPosts.length === 0"
+            description="No jobs found."
+          />
+          <job-list v-else :posts="recentPosts" />
         </a-tab-pane>
         <a-button type="primary" slot="tabBarExtraContent"
           >See all posts</a-button
@@ -73,6 +90,11 @@ export default {
 </template>
 
 <style scoped>
+.spinner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
 .btn-show-all-jobs-mobile {
   width: 100%;
 }

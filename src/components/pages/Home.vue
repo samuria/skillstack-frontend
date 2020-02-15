@@ -1,7 +1,7 @@
 <script>
-import RecentJobsList from '../shared/RecentJobsList';
+import RecentJobsList from "../shared/RecentJobsList";
 export default {
-  name: 'Home',
+  name: "Home",
   components: {
     RecentJobsList
   }
@@ -9,7 +9,7 @@ export default {
 </script>
 
 <template>
-  <div :style="{ background: '#fff', padding: '24px', minHeight: '280px' }">
+  <div :style="{ background: '#fff', padding: '24px', minHeight: '500px' }">
     <recent-jobs-list />
   </div>
 </template>

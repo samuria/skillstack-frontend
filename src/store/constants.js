@@ -1,10 +1,12 @@
 export const TOGGLE_LOADING = 'TOGGLE_LOADING';
 export const SET_ACTIVE_PERIOD = 'SET_ACTIVE_PERIOD';
 export const SET_AVAILABLE_LOCATIONS = 'SET_AVAILABLE_LOCATIONS';
+export const SET_RECENT_POSTS = 'SET_RECENT_POSTS';
+export const RECENT_POST_COUNT = 25;
 export const JOB_TYPE_MAP = {
-  0: 'Full time',
-  1: 'Full time',
-  2: 'Part time',
+  0: 'Full Time',
+  1: 'Full Time',
+  2: 'Part Time',
   3: 'Internship',
   4: 'Freelance'
 };
@@ -16,11 +18,11 @@ export const PERIODS = [
 export const JOB_TYPES_FOR_DROPDOWN = [
   {
     id: 1,
-    text: 'Full time'
+    text: 'Full Time'
   },
   {
     id: 2,
-    text: 'Part time'
+    text: 'Part Time'
   },
   {
     id: 3,

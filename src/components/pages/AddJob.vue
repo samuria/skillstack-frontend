@@ -1,51 +1,12 @@
 <script>
-import CKEditor from '@ckeditor/ckeditor5-vue';
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
-import LocationSelect from '../shared/LocationSelect';
-import { JOB_TYPES_FOR_DROPDOWN } from '@/store/constants';
-
-import JobDetails from '../shared/JobDetails';
-
 export default {
-  name: 'AddJob',
-  components: {
-    ckeditor: CKEditor.component,
-    LocationSelect,
-    JobDetails
-  },
-  data() {
-    return {
-      editor: ClassicEditor,
-      editorData: '<p>Content of the editor.</p>',
-      editorConfig: {
-        // The configuration of the editor.
-      },
-      isPreview: false,
-      formData: {
-        location: '',
-        type: null
-      },
-      type: JOB_TYPES_FOR_DROPDOWN[0],
-      typeOptions: JOB_TYPES_FOR_DROPDOWN
-    };
-  },
-
-  methods: {
-    showPreview() {
-      this.formData.type = this.type.id || -1;
-      this.togglePreview();
-    },
-
-    togglePreview() {
-      this.isPreview = !this.isPreview;
-      window.scrollTo(0, 0);
-    }
-  }
+  name: "AddJob",
+  components: {}
 };
 </script>
 
 <template>
-  <div>
+  <!-- <div>
     <div class="bg-gray-200 min-w-full">
       <div
         class="container mx-auto px-4 py-16 md:px-24 lg:px-32 xl:px-32 2xl:px-64 w-full text-2xl lg:text-3xl text-gray-800"
@@ -226,11 +187,9 @@ export default {
         </div>
       </div>
     </template>
-  </div>
+  </div> -->
+  <h3>Post a new job</h3>
 </template>
 
 <style>
-.ck-editor__editable_inline {
-  min-height: 250px;
-}
 </style>

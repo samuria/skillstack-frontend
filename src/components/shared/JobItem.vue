@@ -1,7 +1,7 @@
 <script>
-import jobDetail from '@/mixins/jobDetail';
+import jobDetail from "@/mixins/jobDetail";
 export default {
-  name: 'JobItem',
+  name: "JobItem",
   mixins: [jobDetail]
 };
 </script>
@@ -109,7 +109,7 @@ export default {
         </div>
       </a-col>
       <a-col span="24" :md="{ span: '10' }" class="job-item-last-column">
-        <a-button type="dashed">{{ jobType }}</a-button>
+        <a-button type="dashed">{{ post.type }}</a-button>
         <span class="text-time-ago">{{ timeago }}</span>
       </a-col>
     </a-row>
