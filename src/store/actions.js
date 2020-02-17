@@ -19,7 +19,6 @@ export default {
       )
       .then(res => {
         commit(constants.SET_RECENT_POSTS, res.data);
-        console.log(res.data);
         return res.data;
       });
   },

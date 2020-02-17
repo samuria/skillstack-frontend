@@ -1,4 +1,5 @@
 import Vue from 'vue';
+require('./assets/styles/responsive.css');
 import 'ant-design-vue/dist/antd.css';
 import {
   Layout,

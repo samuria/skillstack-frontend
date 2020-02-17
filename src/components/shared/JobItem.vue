@@ -88,13 +88,8 @@ export default {
 
   <a-card hoverable :style="{ marginTop: '10px' }">
     <a-row type="flex" justify="space-between">
-      <a-col span="24" :md="{ span: '3' }">
-        <img
-          class="company-image"
-          :src="company.logo"
-          :alt="company.alt"
-          width="60"
-        />
+      <a-col span="24" :md="{ span: '3' }" class="test">
+        <img class="company-image" :src="company.logo" :alt="company.alt" />
       </a-col>
       <a-col span="24" :md="{ span: '10' }">
         <h3>{{ post.position }}</h3>
@@ -119,11 +114,22 @@ export default {
 <style scoped>
 @media only screen and (max-width: 768px) {
   .company-image {
-    display: flex;
-    margin: 0 auto;
-    margin-bottom: 10px;
-    width: 100px;
+    width: 30%;
   }
+}
+
+@media only screen and (min-width: 768px) {
+  .company-image {
+    width: 100%;
+  }
+}
+
+.test {
+  display: flex;
+  flex-direction: flow;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 20px;
 }
 
 .job-item-last-column {

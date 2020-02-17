@@ -5,8 +5,7 @@ export default {
 </script>
 
 <template>
-  <a-layout-header class="app-header">
-    <div class="logo" />
+  <a-layout-header class="header-layout container">
     <div class="logo" :style="{ float: 'left' }">
       <router-link to="/" title="EMSoft">
         <span class="logo-section-one">EM</span>
@@ -29,29 +28,21 @@ export default {
 </template>
 
 <style scoped>
+.header-layout {
+  background-color: white;
+  box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+  padding: 0 24px;
+}
+
 .btn-post-ad {
   margin-left: 10px;
 }
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 767px) {
   .btn-post-ad-text,
   .btn-subscribe-text {
     display: none;
   }
-
-  .app-header {
-    padding: 0 20px;
-  }
-}
-
-@media only screen and (min-width: 768px) {
-  .app-header {
-    padding: 0 50px;
-  }
-}
-
-.app-header {
-  background-color: #ffffff;
 }
 
 .logo-section-one {
