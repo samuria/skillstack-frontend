@@ -1,17 +1,17 @@
 <script>
-import { mapState, mapActions } from "vuex";
-import { PERIODS } from "@/store/constants";
+import { mapState, mapActions } from 'vuex';
+import { PERIODS } from '@/store/constants';
 
 export default {
-  name: "JobPeriodSelector",
+  name: 'JobPeriodSelector',
   computed: {
-    ...mapState(["activePeriod"])
+    ...mapState(['activePeriod'])
   },
   created() {
     this.PERIODS = PERIODS;
   },
   methods: {
-    ...mapActions(["setPeriod"])
+    ...mapActions(['setPeriod'])
 
     // setActiveButton() {
     //   if
@@ -53,36 +53,33 @@ export default {
   </section> -->
 
   <a-row type="flex" justify="space-between">
-    <a-col span="24" :md="{ span: '18' }">
-      <router-link
-        v-for="(period, index) in PERIODS"
-        :key="period.type"
-        :to="period.slug"
-      >
-        <a-button
-          :type="activePeriod === period.type ? 'primary' : 'default'"
-          >{{ period.text }}</a-button
-        ><a-divider
-          type="vertical"
-          v-if="index != Object.keys(PERIODS).length - 1"
-        />
-      </router-link>
+    <a-col span="24" :md="{ span: '15' }">
+      <a-radio-group :defaultValue="activePeriod" size="large">
+        <a-radio-button
+          v-for="period in PERIODS"
+          :key="period.type"
+          @click="$router.push(period.slug)"
+          :value="period.type"
+          >{{ period.text }}</a-radio-button
+        >
+      </a-radio-group>
     </a-col>
-    <a-col span="24" :md="{ span: '4' }">
-      <a-button
-        type="primary"
-        :style="{ width: '100%' }"
-        class="btn-see-all-posts"
-        >See all posts</a-button
-      >
+    <a-col class="secondary-selector-container" span="24" :md="{ span: '9' }">
+      <a-button class="btn-see-all-posts" size="large">See all posts</a-button>
     </a-col>
   </a-row>
 </template>
 
 <style scoped>
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 767px) {
   .btn-see-all-posts {
     margin-top: 10px;
+    width: 100%;
   }
+}
+
+.secondary-selector-container {
+  display: flex;
+  justify-content: flex-end;
 }
 </style>

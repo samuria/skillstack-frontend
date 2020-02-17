@@ -1,18 +1,19 @@
 <script>
 import { mapState, mapActions } from 'vuex';
 import JobList from './JobList';
-// import JobPeriodSelector from './JobPeriodSelector';
+import JobPeriodSelector from './JobPeriodSelector';
 import { PERIODS } from '@/store/constants';
 
 export default {
   name: 'RecentJobsList',
   components: {
-    JobList
-    // JobPeriodSelector
+    JobList,
+    JobPeriodSelector
   },
   data() {
     return {
-      isLoading: false
+      isLoading: false,
+      defaultTab: ''
     };
   },
   computed: {
@@ -45,6 +46,7 @@ export default {
       if (to.meta.period !== from.meta.period) this.setPeriodHandler();
     }
   },
+
   created() {
     this.setPeriodHandler();
     this.PERIODS = PERIODS;
@@ -54,32 +56,18 @@ export default {
 
 <template>
   <a-row type="flex" justify="space-between" :gutter="32">
-    <a-col :span="24" :md="{ span: '16' }"
-      ><h2>Latest posts</h2>
-      <a-tabs
-        @change="periodChange"
-        defaultActiveKey="month"
-        :animated="false"
-        :style="{
-          padding: '20px',
-          minHeight: '300px'
-        }"
-      >
-        <a-tab-pane
-          v-for="period in PERIODS"
-          :key="period.slug"
-          :tab="period.text"
-        >
-          <a-spin type="loading" v-if="isLoading" class="spinner" />
-          <a-empty
-            v-else-if="recentPosts.length === 0"
-            description="No jobs found."
-          />
-
-          <job-list v-else :posts="recentPosts" />
-        </a-tab-pane>
-        <a-button slot="tabBarExtraContent">See all posts</a-button>
-      </a-tabs>
+    <a-col :span="24" :md="{ span: '16' }">
+      <h2>Latest posts</h2>
+      <job-period-selector />
+      <div class="list-container">
+        <a-spin type="loading" v-if="isLoading" class="spinner" />
+        <a-empty
+          v-else-if="recentPosts.length === 0"
+          description="No jobs found."
+          class="empty-message"
+        />
+        <job-list v-else :posts="recentPosts" />
+      </div>
       <div v-if="recentPosts.length > 0" class="recent-jobs-footer">
         <a-button type="primary" size="large">See all posts</a-button>
       </div>
@@ -89,18 +77,22 @@ export default {
 </template>
 
 <style scoped>
-.recent-jobs-footer {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-}
-
-.spinner {
+.list-container {
   display: flex;
   flex-direction: column;
-  align-items: center;
+}
+
+.recent-jobs-footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
 }
 .btn-show-all-jobs-mobile {
   width: 100%;
+}
+
+.spinner,
+.empty-message {
+  margin-top: 50px;
 }
 </style>

@@ -10,16 +10,13 @@ export default {
 };
 </script>
 
-<!-- Change this JobItem component, it looks so trash -->
-
 <template>
   <a-card hoverable :style="{ marginTop: '10px' }">
     <a-row type="flex" justify="space-between">
-      <!-- TODO: change the class name from test to something else -->
-      <a-col span="24" :md="{ span: '3' }" class="test">
-        <img class="company-image" :src="company.logo" :alt="company.alt" />
+      <a-col span="24" :md="{ span: '3' }" class="image-column">
+        <img class="company-image" v-lazy="company.logo" :alt="company.alt" />
       </a-col>
-      <a-col span="15" :md="{ span: '10' }">
+      <a-col span="12">
         <h3>{{ post.position }}</h3>
         <span class="job-item-details"
           ><a-icon type="bank" /> {{ company.name }}
@@ -27,11 +24,11 @@ export default {
         <span class="job-item-details"
           ><a-icon type="environment" /> {{ post.location }}</span
         >
-        <div>
+        <div :style="{ marginTop: '5px' }">
           <a-tag v-for="tag in post.tags" :key="tag.name">{{ tag.name }}</a-tag>
         </div>
       </a-col>
-      <a-col :md="{ span: '5' }" class="job-item-last-column">
+      <a-col span="9" :md="{ span: '6' }" class="job-item-last-column">
         <job-type-badge :post="post" />
         <span class="text-time-ago">{{ timeago }}</span>
       </a-col>
@@ -52,7 +49,7 @@ export default {
   }
 }
 
-.test {
+.image-column {
   display: flex;
   flex-direction: flow;
   align-items: center;
@@ -64,12 +61,10 @@ export default {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  padding-left: 20px;
 }
 
-.job-item-details {
-  @apply text-gray-600;
-}
-
+.job-item-details,
 .text-time-ago {
   @apply text-gray-600;
 }

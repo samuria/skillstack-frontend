@@ -16,12 +16,17 @@ import {
   Divider,
   Tabs,
   Empty,
-  Spin
+  Spin,
+  Radio
 } from 'ant-design-vue';
 
 import App from './App';
 import store from './store';
 import router from './router';
+
+// Setup image lazy loader
+import VueLazyload from 'vue-lazyload';
+Vue.use(VueLazyload);
 
 Vue.use(Layout);
 Vue.use(Menu);
@@ -38,6 +43,7 @@ Vue.use(Divider);
 Vue.use(Tabs);
 Vue.use(Empty);
 Vue.use(Spin);
+Vue.use(Radio);
 
 Vue.config.productionTip = false;
 
