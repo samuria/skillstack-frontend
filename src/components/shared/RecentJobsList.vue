@@ -56,14 +56,21 @@ export default {
   <a-row type="flex" justify="space-between" :gutter="32">
     <a-col :span="24" :md="{ span: '16' }"
       ><h2>Latest posts</h2>
-      <a-tabs @change="periodChange" defaultActiveKey="month" :animated="false">
+      <a-tabs
+        @change="periodChange"
+        defaultActiveKey="month"
+        :animated="false"
+        :style="{
+          padding: '20px',
+          minHeight: '300px'
+        }"
+      >
         <a-tab-pane
           v-for="period in PERIODS"
           :key="period.slug"
           :tab="period.text"
         >
-          <p>{{ activePeriod }}</p>
-          <a-spin v-if="isLoading" size="large" tip="Loading" class="spinner" />
+          <a-spin type="loading" v-if="isLoading" class="spinner" />
           <a-empty
             v-else-if="recentPosts.length === 0"
             description="No jobs found."
@@ -73,13 +80,21 @@ export default {
         </a-tab-pane>
         <a-button slot="tabBarExtraContent">See all posts</a-button>
       </a-tabs>
-      <!-- <job-period-selector /> -->
+      <div v-if="recentPosts.length > 0" class="recent-jobs-footer">
+        <a-button type="primary" size="large">See all posts</a-button>
+      </div>
     </a-col>
     <a-col :span="8"><h2>Featured posts</h2></a-col>
   </a-row>
 </template>
 
 <style scoped>
+.recent-jobs-footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
 .spinner {
   display: flex;
   flex-direction: column;
