@@ -25,7 +25,13 @@ export default {
           ><a-icon type="environment" /> {{ post.location }}</span
         >
         <div :style="{ marginTop: '5px' }">
-          <a-tag v-for="tag in post.tags" :key="tag.name">{{ tag.name }}</a-tag>
+          <router-link
+            v-for="tag in post.tags"
+            :key="tag.name"
+            tag="a-tag"
+            :to="'/tag/' + tag.slug"
+            >{{ tag.name }}</router-link
+          >
         </div>
       </a-col>
       <a-col span="9" :md="{ span: '6' }" class="job-item-last-column">
@@ -39,14 +45,37 @@ export default {
 <style scoped>
 @media only screen and (max-width: 768px) {
   .company-image {
-    width: 30%;
+    width: 20%;
+  }
+
+  .image-column {
+    padding-bottom: 15px;
   }
 }
 
 @media only screen and (min-width: 768px) {
   .company-image {
-    width: 100%;
+    width: 60%;
   }
+}
+
+@media only screen and (min-width: 1200px) {
+  .company-image {
+    width: 45%;
+  }
+}
+
+.company-image {
+  opacity: 0;
+}
+
+img[lazy='loaded'] {
+  opacity: 1;
+  -webkit-transition: opacity 0.5s ease-in;
+  -moz-transition: opacity 0.5s ease-in;
+  -ms-transition: opacity 0.5s ease-in;
+  -o-transition: opacity 0.5s ease-in;
+  transition: opacity 0.5s ease-in;
 }
 
 .image-column {
@@ -54,7 +83,6 @@ export default {
   flex-direction: flow;
   align-items: center;
   justify-content: center;
-  padding-bottom: 20px;
 }
 
 .job-item-last-column {

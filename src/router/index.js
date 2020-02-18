@@ -30,6 +30,11 @@ const router = new Router({
       path: '/add-job',
       name: 'AddJob',
       component: () => import('@/components/pages/AddJob')
+    },
+    {
+      path: '/tag/:slug',
+      name: 'TagPosts',
+      component: () => import('@/components/pages/TagPosts')
     }
   ]
 });

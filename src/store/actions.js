@@ -23,6 +23,10 @@ export default {
       });
   },
 
+  fetchByTag(_, tag) {
+    return http.get(`/tags/${tag}/jobs`).then(res => res.data);
+  },
+
   setPeriod({ commit }, period) {
     commit('SET_ACTIVE_PERIOD', period);
   }

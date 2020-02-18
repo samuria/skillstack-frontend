@@ -47,7 +47,8 @@ export default {
         background: '#fff',
         padding: '24px',
         minHeight: '150px',
-        marginTop: '20px'
+        marginTop: '14px',
+        border: '1px solid #BEBEBE'
       }"
       class="container"
     >
@@ -66,7 +67,7 @@ export default {
             ><a-select
               class="location-select"
               showSearch
-              placeholder="Select a person"
+              placeholder="Location"
               optionFilterProp="children"
               :style="{ width: '100%' }"
               size="large"

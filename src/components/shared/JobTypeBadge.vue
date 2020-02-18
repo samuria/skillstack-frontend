@@ -15,9 +15,13 @@ export default {
 </script>
 
 <template>
-  <a-button :class="buttonType" :style="{ width: '100%' }">{{
-    post.type
-  }}</a-button>
+  <router-link
+    to="/"
+    tag="a-button"
+    :class="buttonType"
+    :style="{ width: '100%' }"
+    >{{ post.type }}</router-link
+  >
 </template>
 
 <style scoped>

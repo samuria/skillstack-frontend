@@ -14,15 +14,15 @@ export default {
 <template>
   <a-layout class="layout">
     <app-header />
-    <app-banner :with-banner="$route.meta.hasBanner" />
+    <app-banner v-if="$route.meta.hasBanner" />
 
     <a-layout-content>
       <div
         :style="{
           background: '#fff',
           minHeight: '500px',
-          marginTop: '20px',
-          padding: '24px'
+          padding: '24px',
+          marginTop: '14px'
         }"
         class="container"
       >

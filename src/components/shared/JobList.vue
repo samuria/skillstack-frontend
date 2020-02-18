@@ -13,6 +13,7 @@ export default {
       type: Array,
       required: true
     },
+    // TODO: check if this is needed
     notFoundText: {
       type: String,
       required: false,
