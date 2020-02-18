@@ -7,6 +7,7 @@ export default {
 <template>
   <a-layout-header class="header-layout container">
     <div class="logo" :style="{ float: 'left' }">
+      <!-- TODO: this route is not being called for whatever reason -->
       <router-link title="EMSoft" to="/">
         <span class="logo-section-one">EM</span>
         <span class="logo-section-two">Soft</span>
