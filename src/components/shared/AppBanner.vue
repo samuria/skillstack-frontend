@@ -109,7 +109,7 @@ export default {
   <section class="border-t border-b py-12 lg:px-4 md:px-20">
     <div class="container">
       <h2 class="text-3xl font-semibold">Search</h2>
-      <div class="flex flex-wrap mt-4">
+      <div class="flex flex-wrap pt-4">
         <div class="w-full flex-auto md:w-2/5">
           <input
             type="text"
@@ -125,7 +125,9 @@ export default {
           />
         </div>
         <div class="w-full flex md:w-1/12 lg:w-1/12">
-          <button class="w-full flex-1 bg-indigo-600 text-white rounded py-2">
+          <button
+            class="w-full flex-1 bg-indigo-600 hover:bg-indigo-700 text-white rounded py-2"
+          >
             <font-awesome-icon icon="search" />
           </button>
         </div>
