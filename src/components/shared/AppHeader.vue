@@ -5,27 +5,29 @@ export default {
 </script>
 
 <template>
-  <a-layout-header class="header-layout container">
-    <div class="logo" :style="{ float: 'left' }">
-      <!-- TODO: this route is not being called for whatever reason -->
-      <router-link title="EMSoft" to="/">
-        <span class="logo-section-one">EM</span>
-        <span class="logo-section-two">Soft</span>
-      </router-link>
+  <!--<a-layout-header class="header-layout">
+    <div class="container">
+      <div class="logo" :style="{ float: 'left' }">
+        <router-link title="EMSoft" to="/">
+          <span class="logo-section-one">EM</span>
+          <span class="logo-section-two">Soft</span>
+        </router-link>
+      </div>
+      <div :style="{ float: 'right' }">
+        <a-button icon="bell" size="large">
+          <span class="btn-subscribe-text">Subscribe</span></a-button
+        >
+        <a-button
+          type="primary"
+          size="large"
+          icon="plus-circle"
+          class="btn-post-ad"
+          ><span class="btn-post-ad-text">New post</span></a-button
+        >
+      </div>
     </div>
-    <div :style="{ float: 'right' }">
-      <a-button icon="bell" size="large">
-        <span class="btn-subscribe-text">Subscribe</span></a-button
-      >
-      <a-button
-        type="primary"
-        size="large"
-        icon="plus-circle"
-        class="btn-post-ad"
-        ><span class="btn-post-ad-text">New post</span></a-button
-      >
-    </div>
-  </a-layout-header>
+  </a-layout-header> -->
+  <h1>header</h1>
 </template>
 
 <style scoped>
