@@ -106,21 +106,21 @@ export default {
       </div>
     </div>
   </a-layout-content> -->
-  <section class="bg-indigo-900 py-12 lg:px-4 md:px-20">
+  <section class="border-t border-b py-12 lg:px-4 md:px-20">
     <div class="container">
-      <h2 class="text-3xl text-white">Search</h2>
+      <h2 class="text-3xl font-semibold">Search</h2>
       <div class="flex flex-wrap mt-4">
         <div class="w-full flex-auto md:w-2/5">
           <input
             type="text"
-            class="w-full outline-none px-2 md:px-4 py-2 md:py-4 rounded text-gray-700 font-semibold"
+            class="w-full outline-none px-2 md:px-4 py-2 md:py-4 rounded text-gray-700 font-semibold border-2 border-gray-400 hover:border-gray-500 focus:border-gray-700"
             placeholder="Position, technology"
           />
         </div>
         <div class="w-full md:w-2/5 sm:my-3 md:mx-3">
           <input
             type="text"
-            class="w-full outline-none px-2 md:px-4 py-2 md:py-4 rounded text-gray-700 font-semibold"
+            class="w-full outline-none px-2 md:px-4 py-2 md:py-4 rounded text-gray-700 font-semibold border-2 border-gray-400 hover:border-gray-500 focus:border-gray-700"
             placeholder="Location"
           />
         </div>
@@ -130,9 +130,46 @@ export default {
           </button>
         </div>
       </div>
-      <div
-        class="grid grid-rows-2 grid-flow-col gap-4 mt-4 text-sm text-gray-200"
-      ></div>
+      <div class="flex mt-4 text-sm text-gray-700 font-semibold">
+        <a href="#" class="border-2 hover:border-gray-500 px-2 py-1 rounded"
+          >Frontend</a
+        >
+        <a
+          href="#"
+          class="border-2 hover:border-gray-500 px-2 py-1 rounded ml-1"
+          >Backend</a
+        >
+        <a
+          href="#"
+          class="border-2 hover:border-gray-500 px-2 py-1 rounded ml-1"
+          >Mobile</a
+        >
+        <a
+          href="#"
+          class="border-2 hover:border-gray-500 px-2 py-1 rounded ml-1"
+          >DevOps</a
+        >
+      </div>
+      <div class="flex mt-1 text-sm text-gray-700 font-semibold">
+        <a href="#" class="border-2 hover:border-gray-500 px-2 py-1 rounded"
+          >Adelaide</a
+        >
+        <a
+          href="#"
+          class="border-2 hover:border-gray-500 px-2 py-1 rounded ml-1"
+          >Melbourne</a
+        >
+        <a
+          href="#"
+          class="border-2 hover:border-gray-500 px-2 py-1 rounded ml-1"
+          >Sydney</a
+        >
+        <a
+          href="#"
+          class="border-2 hover:border-gray-500 px-2 py-1 rounded ml-1"
+          >Perth</a
+        >
+      </div>
     </div>
   </section>
 </template>

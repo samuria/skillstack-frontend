@@ -83,7 +83,7 @@ export default {
       </a>
       <div class="w-full flex justify-end text-base font-bold">
         <button
-          class="text-gray-600 hover:bg-gray-100 border border-gray-200 w-40 sm:w-12 font-bold py-2 px-4 rounded mr-2"
+          class="text-gray-700 hover:border-gray-500 border-2 w-40 sm:w-12 font-bold py-2 px-4 rounded mr-2"
         >
           <font-awesome-icon icon="bell" /><span class="sm:hidden pl-2"
             >Subscribe</span
