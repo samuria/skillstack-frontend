@@ -41,7 +41,7 @@ export default {
 </script>
 
 <template>
-  <a-layout-content>
+  <!-- <a-layout-content>
     <div
       :style="{
         background: '#fff',
@@ -105,7 +105,36 @@ export default {
         <a-tag>Brisbane</a-tag>
       </div>
     </div>
-  </a-layout-content>
+  </a-layout-content> -->
+  <section class="bg-indigo-900 py-12 lg:px-4 md:px-20">
+    <div class="container">
+      <h2 class="text-3xl text-white">Search</h2>
+      <div class="flex flex-wrap mt-4">
+        <div class="w-full flex-auto md:w-2/5">
+          <input
+            type="text"
+            class="w-full outline-none px-2 md:px-4 py-2 md:py-4 rounded text-gray-700 font-semibold"
+            placeholder="Position, technology"
+          />
+        </div>
+        <div class="w-full md:w-2/5 sm:my-3 md:mx-3">
+          <input
+            type="text"
+            class="w-full outline-none px-2 md:px-4 py-2 md:py-4 rounded text-gray-700 font-semibold"
+            placeholder="Location"
+          />
+        </div>
+        <div class="w-full flex md:w-1/12 lg:w-1/12">
+          <button class="w-full flex-1 bg-indigo-600 text-white rounded py-2">
+            <font-awesome-icon icon="search" />
+          </button>
+        </div>
+      </div>
+      <div
+        class="grid grid-rows-2 grid-flow-col gap-4 mt-4 text-sm text-gray-200"
+      ></div>
+    </div>
+  </section>
 </template>
 
 <style scoped>

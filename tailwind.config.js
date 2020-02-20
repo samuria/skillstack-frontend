@@ -1,9 +1,22 @@
-const defaultTheme = require("tailwindcss/defaultTheme");
+const defaultTheme = require('tailwindcss/defaultTheme');
 
 module.exports = {
   theme: {
-    fontFamily: {
-      sans: ["Montserrat", ...defaultTheme.fontFamily.sans]
+    screens: {
+      sm: { max: '767px' },
+      md: { min: '768px' },
+      lg: { min: '960px', max: '1289px' },
+      xl: { min: '1289px' }
+    },
+    extend: {
+      transitionProperty: {
+        height: 'height',
+        width: 'width',
+        spacing: 'margin, padding'
+      }
     }
+  },
+  corePlugins: {
+    container: false
   }
 };

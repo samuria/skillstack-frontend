@@ -27,32 +27,79 @@ export default {
       </div>
     </div>
   </a-layout-header> -->
-  <h1>header</h1>
+
+  <!-- <header
+    class="container bg-white flex items-center justify-between w-full border border-red-600"
+  >
+    <div>
+      <a href="/" title="Abstract UI" class="h-6 xl:h-8">
+        <span class="text-3xl text-gray-700 font-bold underline">EM</span>
+        <span class="text-3xl text-green-600 font-extrabold underline"
+          >Soft</span
+        >
+      </a>
+    </div>
+    <div class="hidden md:block">
+      <nav>
+        <a
+          href="#"
+          title="Products"
+          class="px-4 py-2 inline-block font-bold rounded text-gray-600 hover:bg-gray-200 hover:text-gray-700"
+          ><font-awesome-icon icon="bullhorn" /><span class="px-3"
+            >Subscribe</span
+          ></a
+        >
+        <a
+          href="#"
+          title="Products"
+          class="px-4 py-2 inline-block font-bold rounded bg-green-600 text-white ml-2"
+          ><span class="px-3">Post a discussion</span></a
+        >
+      </nav>
+    </div>
+    <div class="md:hidden">
+      <nav>
+        <a
+          href="#"
+          title="Products"
+          class="px-4 py-2 inline-block rounded bg-gray-700 text-gray-100"
+          ><font-awesome-icon icon="bullhorn" />
+        </a>
+        <a
+          href="#"
+          title="Products"
+          class="px-4 py-2 inline-block rounded bg-green-600 text-gray-100 ml-2"
+          ><font-awesome-icon icon="plus"
+        /></a>
+      </nav>
+    </div>
+  </header> -->
+
+  <header class="flex items-center lg:px-4 md:px-20">
+    <nav class="container flex justify-between">
+      <a href="/" title="EMSoft" class="text-3xl text-gray-700 font-bold">
+        <span class="underline">EM</span>
+        <span class="text-indigo-600 underline">Soft</span>
+      </a>
+      <div class="w-full flex justify-end text-base font-bold">
+        <button
+          class="text-gray-600 hover:bg-gray-100 border border-gray-200 w-40 sm:w-12 font-bold py-2 px-4 rounded mr-2"
+        >
+          <font-awesome-icon icon="bell" /><span class="sm:hidden pl-2"
+            >Subscribe</span
+          >
+        </button>
+
+        <button
+          class="flex flex-row justify-center items-center item bg-indigo-600 text-white font-bold px-4 rounded w-40 sm:w-12"
+        >
+          <font-awesome-icon icon="plus" /><span class="sm:hidden pl-2"
+            >New post</span
+          >
+        </button>
+      </div>
+    </nav>
+  </header>
 </template>
 
-<style scoped>
-.header-layout {
-  background-color: white;
-  box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
-  padding: 0 24px;
-}
-
-.btn-post-ad {
-  margin-left: 10px;
-}
-
-@media only screen and (max-width: 767px) {
-  .btn-post-ad-text,
-  .btn-subscribe-text {
-    display: none;
-  }
-}
-
-.logo-section-one {
-  @apply text-3xl text-gray-700 font-bold underline select-none;
-}
-
-.logo-section-two {
-  @apply text-3xl text-blue-600 font-extrabold underline select-none;
-}
-</style>
+<style scoped></style>

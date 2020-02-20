@@ -12,7 +12,11 @@ export default {
 </script>
 
 <template>
-  <a-layout class="layout">
+  <div class="main">
+    <app-header />
+    <app-banner v-if="$route.meta.hasBanner" />
+  </div>
+  <!-- <a-layout class="layout">
     <app-header />
     <app-banner v-if="$route.meta.hasBanner" />
 
@@ -29,9 +33,9 @@ export default {
         <router-view />
       </div>
     </a-layout-content>
-  </a-layout>
+  </a-layout> -->
 </template>
 
 <style scoped></style>
 
-<!--<style src="./assets/styles/tailwind.css"></style> -->
+<style src="./assets/styles/tailwind.css"></style>
