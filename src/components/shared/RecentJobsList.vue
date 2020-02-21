@@ -1,13 +1,13 @@
 <script>
 import { mapState, mapActions } from 'vuex';
-import JobList from './JobList';
+// import JobList from './JobList';
 import JobPeriodSelector from './JobPeriodSelector';
 import { PERIODS } from '@/store/constants';
 
 export default {
   name: 'RecentJobsList',
   components: {
-    JobList,
+    // JobList,
     JobPeriodSelector
   },
   data() {
@@ -55,7 +55,7 @@ export default {
 </script>
 
 <template>
-  <a-row type="flex" justify="space-between" :gutter="32">
+  <!-- <a-row type="flex" justify="space-between" :gutter="32">
     <a-col :span="24" :md="{ span: '16' }">
       <h2>Latest posts</h2>
       <job-period-selector />
@@ -73,7 +73,11 @@ export default {
       </div>
     </a-col>
     <a-col :span="8"><h2>Featured posts</h2></a-col>
-  </a-row>
+  </a-row> -->
+  <div>
+    <h2 class="text-lg font-semibold">Latest posts</h2>
+    <job-period-selector />
+  </div>
 </template>
 
 <style scoped>

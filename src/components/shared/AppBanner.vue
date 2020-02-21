@@ -115,6 +115,7 @@ export default {
             type="text"
             class="w-full outline-none px-2 md:px-4 py-2 md:py-4 rounded text-gray-700 font-semibold border-2 border-gray-400 hover:border-gray-500 focus:border-gray-700"
             placeholder="Position, technology"
+            spellcheck="false"
           />
         </div>
         <div class="w-full md:w-2/5 sm:my-3 md:mx-3">
