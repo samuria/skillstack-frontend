@@ -1,13 +1,13 @@
 <script>
 import { mapState, mapActions } from 'vuex';
-// import JobList from './JobList';
+import JobList from './JobList';
 import JobPeriodSelector from './JobPeriodSelector';
 import { PERIODS } from '@/store/constants';
 
 export default {
   name: 'RecentJobsList',
   components: {
-    // JobList,
+    JobList,
     JobPeriodSelector
   },
   data() {
@@ -77,6 +77,9 @@ export default {
   <div>
     <h2 class="text-lg font-semibold">Latest posts</h2>
     <job-period-selector />
+    <div class="pt-4" :style="{ minHeight: '500px' }">
+      <job-list :posts="recentPosts" />
+    </div>
   </div>
 </template>
 

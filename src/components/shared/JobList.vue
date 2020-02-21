@@ -1,5 +1,6 @@
 <script>
 import JobItem from './JobItem';
+import NoJobsAlert from './NoJobsAlert';
 
 export default {
   name: 'JobList',
@@ -21,14 +22,16 @@ export default {
     }
   },
   components: {
-    JobItem
+    JobItem,
+    NoJobsAlert
   }
 };
 </script>
 
 <template>
   <section>
-    <job-item v-for="post in posts" :key="post.slug" :post="post" />
+    <no-jobs-alert v-if="posts.length === 0" />
+    <job-item v-else v-for="post in posts" :key="post.slug" :post="post" />
   </section>
 </template>
 

@@ -14,9 +14,6 @@ module.exports = {
         width: 'width',
         spacing: 'margin, padding'
       }
-    },
-    fontFamily: {
-      sans: ['Montserrat', ...defaultTheme.fontFamily.sans]
     }
   },
   corePlugins: {
