@@ -120,7 +120,7 @@ export default {
                 {{ post.description }}
               </p>
             </div>
-            <div class="w-full md:w-2/6">
+            <div class="w-full md:w-2/6 sm:pt-12">
               <div
                 class="flex flex-col border bg-gray-100 rounded md:ml-4 px-8 py-6 text-sm"
               >
@@ -215,8 +215,7 @@ export default {
                   <button
                     class="w-full py-3 flex flex-row justify-center items-center item bg-indigo-600 text-white font-medium px-4 rounded focus:outline-none"
                   >
-                    <font-awesome-icon icon="envelope" /><span
-                      class="sm:hidden pl-2"
+                    <font-awesome-icon icon="envelope" /><span class=" pl-2"
                       >Apply via email</span
                     >
                   </button>
