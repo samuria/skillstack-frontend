@@ -9,7 +9,7 @@ export default {
 </script>
 
 <template>
-  <recent-jobs-list />
+  <section class="lg:px-4 md:px-20 pt-10"><recent-jobs-list /></section>
 </template>
 
 <style scoped></style>

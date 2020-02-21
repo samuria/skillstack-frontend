@@ -14,6 +14,9 @@ module.exports = {
         width: 'width',
         spacing: 'margin, padding'
       }
+    },
+    fontFamily: {
+      sans: ['Rubik', ...defaultTheme.fontFamily.sans]
     }
   },
   corePlugins: {

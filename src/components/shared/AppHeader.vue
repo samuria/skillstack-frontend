@@ -75,7 +75,7 @@ export default {
     </div>
   </header> -->
 
-  <header class="flex items-center lg:px-4 md:px-20">
+  <header class="flex items-center lg:px-4 md:px-20 border-b">
     <nav class="container flex justify-between">
       <a href="/" title="EMSoft" class="text-3xl text-gray-700 font-bold">
         <span class="underline">EM</span>

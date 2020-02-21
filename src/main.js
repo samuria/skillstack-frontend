@@ -13,9 +13,35 @@ require('./assets/styles/main.css');
 
 // Import Icons
 import { library } from '@fortawesome/fontawesome-svg-core';
-import { faPlus, faBell, faSearch } from '@fortawesome/free-solid-svg-icons';
+import {
+  faPlus,
+  faBell,
+  faSearch,
+  faLink,
+  faCalendarAlt,
+  faMapMarkedAlt,
+  faUser,
+  faGlobe,
+  faMapMarkerAlt,
+  faTags,
+  faEnvelope
+} from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-library.add(faPlus, faBell, faSearch);
+import { faTwitter } from '@fortawesome/free-brands-svg-icons';
+library.add(
+  faPlus,
+  faBell,
+  faSearch,
+  faTwitter,
+  faLink,
+  faCalendarAlt,
+  faMapMarkedAlt,
+  faUser,
+  faGlobe,
+  faMapMarkerAlt,
+  faTags,
+  faEnvelope
+);
 
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 Vue.config.productionTip = false;

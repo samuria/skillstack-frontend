@@ -46,7 +46,7 @@ export default {
       <div class="flex justify-end w-full lg:w-1/6 text-xs lg:text-sm">
         <router-link
           to="/#"
-          class="w-full text-center text-gray-700 font-semibold py-3 rounded mt-3 lg:m-0"
+          class="w-full text-center text-gray-700 font-medium py-3 rounded mt-3 lg:m-0"
           ><font-awesome-icon icon="plus" size="sm" /> See all
           posts</router-link
         >

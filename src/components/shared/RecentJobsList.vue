@@ -74,7 +74,7 @@ export default {
     </a-col>
     <a-col :span="8"><h2>Featured posts</h2></a-col>
   </a-row> -->
-  <div>
+  <div class="container">
     <h2 class="text-lg font-semibold">Latest posts</h2>
     <job-period-selector />
     <div class="pt-4" :style="{ minHeight: '500px' }">

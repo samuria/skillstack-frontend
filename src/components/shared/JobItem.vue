@@ -40,7 +40,7 @@ export default {
     </a-row>
   </a-card> -->
 
-  <router-link :to="post.slug"
+  <router-link :to="'/jobs/' + post.slug"
     ><div class="job-item flex flex-wrap py-4 px-6 rounded-l">
       <div class="mr-3 pt-1">
         <img
@@ -51,7 +51,7 @@ export default {
         />
       </div>
       <div>
-        <h2 class="text-gray-900 text-blue-700 font-semibold">
+        <h2 class="text-blue-700 font-medium">
           {{ post.position }}
         </h2>
         <h3 class="text-xs">
@@ -68,7 +68,7 @@ export default {
           >
         </div>
         <div class="text-xs mt-2">
-          <span class="text-gray-900 text-orange-600 font-semibold">{{
+          <span class="text-gray-900 text-pink-700 font-semibold">{{
             timeago
           }}</span>
           ·
@@ -80,15 +80,6 @@ export default {
 </template>
 
 <style scoped>
-img[lazy='loaded'] {
-  opacity: 1;
-  -webkit-transition: opacity 0.5s ease-in;
-  -moz-transition: opacity 0.5s ease-in;
-  -ms-transition: opacity 0.5s ease-in;
-  -o-transition: opacity 0.5s ease-in;
-  transition: opacity 0.5s ease-in;
-}
-
 .job-item {
   background-color: #fafafa;
   border-bottom: 1px solid #e4e6e8;
@@ -97,7 +88,7 @@ img[lazy='loaded'] {
 
 .job-item:hover {
   background-color: white;
-  border-left-color: #ff8c42;
+  border-left-color: #5a67d8;
 }
 
 .job-item:hover h2 {

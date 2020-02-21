@@ -23,6 +23,10 @@ export default {
       });
   },
 
+  fetchBySlug(_, slug) {
+    return http.get(`/jobs/${slug}`).then(res => res.data);
+  },
+
   fetchByTag(_, tag) {
     return http.get(`/tags/${tag}/jobs`).then(res => res.data);
   },
