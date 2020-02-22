@@ -41,7 +41,7 @@ export default {
           .then(res => {
             this.isLoading = false;
             this.post = res;
-            console.log(this.post.company);
+            console.log(this.post.company.twitter);
           })
           .catch(() => {
             this.isLoading = false;
@@ -65,7 +65,7 @@ export default {
 
 <template>
   <!-- TODO: Change this into an actual spinner -->
-  <h2 v-if="isLoading">Loading</h2>
+  <loading-spinner v-if="isLoading" />
   <section v-else>
     <div class="border-b lg:px-4 md:px-20">
       <div class="container">
@@ -75,16 +75,16 @@ export default {
               {{ post.position }}
             </h2>
             <h3>
-              <span>
+              <span class="text-gray-700">
                 {{ post.type }}
               </span>
             </h3>
           </div>
-          <div class="w-auto md:w-1/3">
+          <div class="w-auto md:w-1/3 sm:mt-6">
             <a
               :href="'//' + post.company.twitter"
               target="_blank"
-              class="md:float-right sm:mt-8 sm:py-1 sm:px-3 py-2 px-4 justify-center items-center text-gray-700 border-2 border-blue-400 hover:bg-blue-400 hover:text-gray-100 font-medium rounded focus:outline-none"
+              class="md:float-right py-2 px-4 justify-center items-center text-gray-700 border-2 border-blue-400 hover:bg-blue-400 hover:text-gray-100 font-medium rounded focus:outline-none"
             >
               <font-awesome-icon :icon="['fab', 'twitter']" /><span class="pl-2"
                 >Follow</span
@@ -107,18 +107,42 @@ export default {
                   width="100"
                 />
               </div>
-              <h3 class="mt-8 text-xl text-gray-800">
-                {{ post.company.name }}
-              </h3>
-              <a
-                :href="post.company.website"
-                class="w-1/6 text-sm text-gray-600 hover:text-blue-600"
-                ><font-awesome-icon icon="link" /> Website</a
-              >
+              <div>
+                <h3 class="mt-8 text-xl text-gray-800">
+                  {{ post.company.name }}
+                </h3>
+                <div class="font-light flex flex-wrap text-sm text-gray-700">
+                  <a
+                    :href="'//' + post.company.website"
+                    target="_blank"
+                    class="hover:text-blue-600 flex flex-wrap items-center"
+                    ><font-awesome-icon icon="link" />
+                    <span class="ml-1">Website</span></a
+                  >
+                  <a
+                    :href="post.company.twitter"
+                    class="hover:text-blue-600 ml-4 flex flex-wrap items-center"
+                    ><font-awesome-icon :icon="['fab', 'twitter']" />
+                    <span class="ml-1">@{{ post.company.twitter }}</span></a
+                  >
+                  <a
+                    :href="post.company.linkedin"
+                    class="hover:text-blue-600 ml-4 flex flex-wrap items-center"
+                    ><font-awesome-icon :icon="['fab', 'linkedin']" />
+                    <span class="ml-1">{{ post.company.name }}</span></a
+                  >
+                </div>
+              </div>
+
               <hr class="my-8" />
-              <p class="text-gray-700 font-light">
+              <!-- <p class="text-gray-700 font-light">
                 {{ post.description }}
-              </p>
+              </p> -->
+              <div
+                class="text-sm text-gray-700"
+                itemprop="description"
+                v-html="post.description"
+              />
             </div>
             <div class="w-full md:w-2/6 sm:pt-12">
               <div
@@ -170,7 +194,7 @@ export default {
                   </div>
                 </div>
                 <div class="flex flex-row mt-4">
-                  <div class="w-1/12">
+                  <div class="">
                     <font-awesome-icon
                       icon="globe"
                       size="lg"
@@ -229,4 +253,14 @@ export default {
   </section>
 </template>
 
-<style scoped></style>>
+<style scoped>
+.company-image {
+}
+</style>
+
+<style>
+ul {
+  list-style: disc;
+  padding-left: 40px;
+}
+</style>

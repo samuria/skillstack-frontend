@@ -11,6 +11,10 @@ Vue.use(VueLazyload);
 require('./assets/styles/responsive.css');
 require('./assets/styles/main.css');
 
+// Loading spinner
+import LoadingSpinner from './components/shared/LoadingSpinner';
+Vue.component('loading-spinner', LoadingSpinner);
+
 // Import Icons
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
@@ -27,7 +31,7 @@ import {
   faEnvelope
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
-import { faTwitter } from '@fortawesome/free-brands-svg-icons';
+import { faTwitter, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 library.add(
   faPlus,
   faBell,
@@ -40,7 +44,8 @@ library.add(
   faGlobe,
   faMapMarkerAlt,
   faTags,
-  faEnvelope
+  faEnvelope,
+  faLinkedin
 );
 
 Vue.component('font-awesome-icon', FontAwesomeIcon);

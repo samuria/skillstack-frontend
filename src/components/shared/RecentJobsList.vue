@@ -55,30 +55,12 @@ export default {
 </script>
 
 <template>
-  <!-- <a-row type="flex" justify="space-between" :gutter="32">
-    <a-col :span="24" :md="{ span: '16' }">
-      <h2>Latest posts</h2>
-      <job-period-selector />
-      <div class="list-container">
-        <a-spin type="loading" v-if="isLoading" class="spinner" />
-        <a-empty
-          v-else-if="recentPosts.length === 0"
-          description="No jobs found."
-          class="empty-message"
-        />
-        <job-list v-else :posts="recentPosts" />
-      </div>
-      <div v-if="recentPosts.length > 0" class="recent-jobs-footer">
-        <a-button type="primary" size="large">See all posts</a-button>
-      </div>
-    </a-col>
-    <a-col :span="8"><h2>Featured posts</h2></a-col>
-  </a-row> -->
   <div class="container">
     <h2 class="text-lg font-semibold">Latest posts</h2>
     <job-period-selector />
     <div class="pt-4" :style="{ minHeight: '500px' }">
-      <job-list :posts="recentPosts" />
+      <loading-spinner v-if="isLoading" />
+      <job-list v-else :posts="recentPosts" />
     </div>
   </div>
 </template>

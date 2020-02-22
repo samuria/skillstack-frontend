@@ -23,9 +23,9 @@ export default {
 <template>
   <section class="pt-8 pb-2">
     <div class="flex flex-wrap justify-between">
-      <div class="w-full lg:w-4/6">
+      <div class="w-full lg:w-3/6">
         <ul
-          class="flex flex-wrap items-center -mx-1 text-xs lg:text-sm text-gray-600"
+          class="flex flex-wrap items-center -mx-1 text-xs lg:text-sm text-gray-600 list-none pl-0"
         >
           <li
             v-for="period in PERIODS"
