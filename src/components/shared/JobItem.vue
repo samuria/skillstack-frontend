@@ -42,7 +42,7 @@ export default {
 
   <router-link :to="'/jobs/' + post.slug"
     ><div class="job-item flex flex-wrap py-4 px-6 rounded-l">
-      <div class="mr-3 pt-1">
+      <div class="mr-3 pt-1 sm:w-full md:pt-2">
         <img
           class="company-image"
           v-lazy="company.logo"

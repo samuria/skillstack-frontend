@@ -1,4 +1,6 @@
 <script>
+import bannerTags from '@/assets/data/banner-tags';
+
 export default {
   name: 'AppBanner',
   props: {
@@ -8,17 +10,12 @@ export default {
       default: false
     }
   },
-  // methods: {
-  //   getTitles: async () => {
-  //     try {
-  //       await axios.get('http://localhost:3000/my-titles').then(res => {
-  //         console.log(res.data);
-  //       });
-  //     } catch (error) {
-  //       console.log(error);
-  //     }
-  //   }
-  // },
+  data() {
+    return {
+      skillTags: [],
+      locationTags: []
+    };
+  },
   methods: {
     handleChange(value) {
       console.log(`selected ${value}`);
@@ -36,6 +33,20 @@ export default {
           .indexOf(input.toLowerCase()) >= 0
       );
     }
+  },
+
+  computed: {
+    firstTags() {
+      return bannerTags.skills;
+    },
+    secondTags() {
+      return bannerTags.locations;
+    }
+  },
+
+  created() {
+    this.skillTags = this.firstTags;
+    this.locationTags = this.secondTags;
   }
 };
 </script>
@@ -68,44 +79,22 @@ export default {
           </button>
         </div>
       </div>
-      <div class="flex mt-4 text-sm text-gray-700">
-        <a href="#" class="border-2 hover:border-gray-500 px-2 py-1 rounded"
-          >Frontend</a
-        >
+      <div class="flex mt-4 text-sm text-gray-700 -ml-1">
         <a
           href="#"
           class="border-2 hover:border-gray-500 px-2 py-1 rounded ml-1"
-          >Backend</a
-        >
-        <a
-          href="#"
-          class="border-2 hover:border-gray-500 px-2 py-1 rounded ml-1"
-          >Mobile</a
-        >
-        <a
-          href="#"
-          class="border-2 hover:border-gray-500 px-2 py-1 rounded ml-1"
-          >DevOps</a
+          v-for="tag in skillTags"
+          :key="tag"
+          >{{ tag }}</a
         >
       </div>
-      <div class="flex mt-1 text-sm text-gray-700">
-        <a href="#" class="border-2 hover:border-gray-500 px-2 py-1 rounded"
-          >Adelaide</a
-        >
+      <div class="flex mt-1 text-sm text-gray-700 -ml-1">
         <a
           href="#"
           class="border-2 hover:border-gray-500 px-2 py-1 rounded ml-1"
-          >Melbourne</a
-        >
-        <a
-          href="#"
-          class="border-2 hover:border-gray-500 px-2 py-1 rounded ml-1"
-          >Sydney</a
-        >
-        <a
-          href="#"
-          class="border-2 hover:border-gray-500 px-2 py-1 rounded ml-1"
-          >Perth</a
+          v-for="tag in locationTags"
+          :key="tag"
+          >{{ tag }}</a
         >
       </div>
     </div>
