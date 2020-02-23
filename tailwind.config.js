@@ -16,7 +16,7 @@ module.exports = {
       }
     },
     fontFamily: {
-      sans: ['Rubik', ...defaultTheme.fontFamily.sans]
+      sans: ['Montserrat', ...defaultTheme.fontFamily.sans]
     }
   },
   corePlugins: {

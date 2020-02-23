@@ -1,6 +1,6 @@
 <script>
-import { mapActions } from 'vuex';
-import jobInfoMixin from '@/mixins/jobInfoMixin';
+import { mapActions } from "vuex";
+import jobInfoMixin from "@/mixins/jobInfoMixin";
 
 export default {
   props: {
@@ -33,7 +33,7 @@ export default {
   },
 
   methods: {
-    ...mapActions(['fetchBySlug']),
+    ...mapActions(["fetchBySlug"]),
 
     fetchData() {
       if (!this.preview) {
@@ -52,7 +52,7 @@ export default {
   },
   watch: {
     $route(from, to) {
-      if (to.name === 'jobDetails' && from.params.slug !== to.params.slug) {
+      if (to.name === "jobDetails" && from.params.slug !== to.params.slug) {
         this.fetchData();
       }
     }
@@ -67,7 +67,7 @@ export default {
   <!-- TODO: Change this into an actual spinner -->
   <loading-spinner v-if="isLoading" />
   <section v-else>
-    <div class="border-b lg:px-4 md:px-20">
+    <div class="border-b lg:px-4 md:px-20 bg-gray-100">
       <div class="container">
         <div class="flex flex-wrap py-16">
           <div class="w-full md:w-2/3">
@@ -120,24 +120,20 @@ export default {
                     <span class="ml-1">Website</span></a
                   >
                   <a
-                    :href="post.company.twitter"
+                    :href="'//' + post.company.twitter"
                     class="hover:text-blue-600 ml-4 flex flex-wrap items-center"
                     ><font-awesome-icon :icon="['fab', 'twitter']" />
                     <span class="ml-1">@{{ post.company.twitter }}</span></a
                   >
                   <a
-                    :href="post.company.linkedin"
+                    :href="'//' + post.company.linkedin"
                     class="hover:text-blue-600 ml-4 flex flex-wrap items-center"
                     ><font-awesome-icon :icon="['fab', 'linkedin']" />
                     <span class="ml-1">{{ post.company.name }}</span></a
                   >
                 </div>
               </div>
-
               <hr class="my-8" />
-              <!-- <p class="text-gray-700 font-light">
-                {{ post.description }}
-              </p> -->
               <div
                 class="text-sm text-gray-700"
                 itemprop="description"
@@ -156,8 +152,8 @@ export default {
                       class="text-indigo-500"
                     />
                   </div>
-                  <div class="ml-5">
-                    <span class="font-medium text-sm ">
+                  <div class="ml-5 w-11/12">
+                    <span class="font-medium ">
                       Last updated
                     </span>
                     <p class="text-sm font-light">{{ formattedDate }}</p>
@@ -171,8 +167,8 @@ export default {
                       class="text-indigo-500"
                     />
                   </div>
-                  <div class="ml-5">
-                    <span class="font-medium text-sm ">
+                  <div class="ml-5 w-11/12">
+                    <span class="font-medium">
                       Position
                     </span>
                     <p class="text-sm font-light">{{ post.position }}</p>
@@ -186,28 +182,26 @@ export default {
                       class="text-indigo-500"
                     />
                   </div>
-                  <div class="ml-5">
-                    <span class="font-medium text-sm ">
+                  <div class="ml-5 w-11/12">
+                    <span class="font-medium">
                       Location
                     </span>
-                    <p class="text-sm font-light">{{ post.location }}</p>
+                    <p class="font-light">{{ post.location }}</p>
                   </div>
                 </div>
                 <div class="flex flex-row mt-4">
-                  <div class="">
+                  <div class="w-1/12">
                     <font-awesome-icon
                       icon="globe"
                       size="lg"
                       class="text-indigo-500"
                     />
                   </div>
-                  <div class="ml-5">
-                    <span class="font-medium text-sm ">
+                  <div class="ml-5 w-11/12">
+                    <span class="font-medium">
                       Website
                     </span>
-                    <p
-                      class="text-sm font-light text-blue-600 hover:text-blue-400"
-                    >
+                    <p class="font-light text-blue-600 hover:text-blue-400">
                       <a :href="post.company.website">{{
                         post.company.website
                       }}</a>
@@ -222,14 +216,14 @@ export default {
                       class="text-indigo-500"
                     />
                   </div>
-                  <div class="ml-5">
-                    <span class="font-medium text-sm "> Tags </span><br />
+                  <div class="ml-5 w-11/12">
+                    <span class="font-medium"> Tags </span><br />
                     <div class="flex flex-wrap -ml-1 mt-2">
                       <router-link
                         v-for="tag in post.tags"
                         :key="tag.name"
                         :to="'/tag/' + tag.slug"
-                        class="text-xs font-semibold bg-indigo-100 text-indigo-500 rounded-sm ml-1 p-1 hover:text-indigo-600"
+                        class="text-xs font-medium bg-indigo-100 text-indigo-500 rounded-sm ml-1 p-1 hover:text-indigo-600"
                         >{{ tag.name }}</router-link
                       >
                     </div>

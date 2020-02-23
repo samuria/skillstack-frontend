@@ -21,6 +21,4 @@ export default {
   </div>
 </template>
 
-<style scoped></style>
-
 <style src="./assets/styles/tailwind.css"></style>

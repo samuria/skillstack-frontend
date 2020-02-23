@@ -101,11 +101,4 @@ export default {
   </section>
 </template>
 
-<style scoped>
-@media only screen and (max-width: 767px) {
-  .location-select,
-  .btn-search {
-    margin-top: 10px;
-  }
-}
-</style>
+<style scoped></style>
