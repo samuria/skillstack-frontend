@@ -42,19 +42,6 @@ export default {
       if (this.value) {
         this.selected = this.value;
       }
-    },
-
-    searchChange(text) {
-      if (text.trim() === '') {
-        this.options = this.locations;
-
-        return;
-      }
-
-      this.options = this.locations.filter(
-        l =>
-          l.toLocaleLowerCase('tr').indexOf(text.toLocaleLowerCase('tr')) > -1
-      );
     }
   },
 
@@ -72,31 +59,9 @@ export default {
 </script>
 
 <template>
-  <multiselect
-    class="multiselect"
-    :class="{ 'is-searchable': searchable }"
-    v-model="selected"
+  <v-select
+    class="vue-selector"
     :options="options"
-    :searchable="searchable"
-    :close-on-select="true"
-    :show-labels="false"
-    :internal-search="false"
-    placeholder="Select a city..."
+    v-model="selected"
     @input="handleChange"
-    @search-range="searchChange"
-  >
-    <div slot="noResult">
-      No results found
-    </div>
-  </multiselect>
-</template>
-
-<style src="vue-multiselect/dist/vue-multiselect.min.css"></style>
-
-<style>
-.multiselect__tags,
-.multiselect__tags span,
-.multiselect__tags input {
-  @apply bg-gray-100 text-gray-700 border-gray-400 pt-2 pb-1 px-3;
-}
-</style>
+/></template>

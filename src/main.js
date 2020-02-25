@@ -15,6 +15,11 @@ require('./assets/styles/main.css');
 import LoadingSpinner from './components/shared/LoadingSpinner';
 Vue.component('loading-spinner', LoadingSpinner);
 
+// vue-select setup
+import VueSelect from 'vue-select';
+import 'vue-select/dist/vue-select.css';
+Vue.component('v-select', VueSelect);
+
 // Import Icons
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
@@ -28,7 +33,8 @@ import {
   faGlobe,
   faMapMarkerAlt,
   faTags,
-  faEnvelope
+  faEnvelope,
+  faArrowRight
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { faTwitter, faLinkedin } from '@fortawesome/free-brands-svg-icons';
@@ -45,7 +51,8 @@ library.add(
   faMapMarkerAlt,
   faTags,
   faEnvelope,
-  faLinkedin
+  faLinkedin,
+  faArrowRight
 );
 
 Vue.component('font-awesome-icon', FontAwesomeIcon);

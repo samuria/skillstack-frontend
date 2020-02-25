@@ -1,8 +1,8 @@
 <script>
-import AddJobForm from "../shared/AddJobForm";
+import AddJobForm from '../shared/AddJobForm';
 
 export default {
-  name: "AddJob",
+  name: 'AddJob',
   components: {
     AddJobForm
   }
@@ -28,5 +28,4 @@ export default {
   </section>
 </template>
 
-<style>
-</style>
+<style></style>

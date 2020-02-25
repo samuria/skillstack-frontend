@@ -1,10 +1,11 @@
 export default [
-  'Remote',
-  'Sydney',
-  'Melbourne',
+  'Adelaide',
   'Brisbane',
-  'Perth',
-  'Hobart',
+  'Canberra',
   'Darwin',
-  'Canberra'
+  'Hobart',
+  'Melbourne',
+  'Perth',
+  'Remote',
+  'Sydney'
 ];

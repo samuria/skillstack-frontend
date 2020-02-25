@@ -15,3 +15,14 @@ header {
   -o-transition: opacity 0.5s ease-in;
   transition: opacity 0.5s ease-in;
 }
+
+.vue-selector .vs__search::placeholder,
+.vue-selector .vs__dropdown-toggle,
+.vue-selector .vs__dropdown-menu {
+  @apply py-3 px-2 bg-white text-gray-400 cursor-pointer text-sm border-gray-300;
+}
+
+.vue-selector .vs__clear,
+.vue-selector .vs__open-indicator {
+  fill: #394066;
+}
