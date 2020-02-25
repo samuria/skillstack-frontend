@@ -1,5 +1,5 @@
 <script>
-import JobList from '../shared/JobList';
+import JobList from "../shared/JobList";
 
 export default {
   components: {
@@ -25,7 +25,12 @@ export default {
 </script>
 
 <template>
-  <job-list :posts="posts" />
+  <div class="lg:px-4 md:px-20 mt-10">
+    <div class="container">
+      <loading-spinner v-if="isLoading" />
+      <job-list v-else :posts="posts" />
+    </div>
+  </div>
 </template>
 
 <style></style>

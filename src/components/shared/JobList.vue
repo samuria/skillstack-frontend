@@ -1,9 +1,9 @@
 <script>
-import JobItem from './JobItem';
-import NoJobsAlert from './NoJobsAlert';
+import JobItem from "./JobItem";
+import NoJobsAlert from "./NoJobsAlert";
 
 export default {
-  name: 'JobList',
+  name: "JobList",
   props: {
     isLoading: {
       type: Boolean,
@@ -18,12 +18,17 @@ export default {
     notFoundText: {
       type: String,
       required: false,
-      default: 'No jobs found.'
+      default: "No jobs found."
     }
   },
   components: {
     JobItem,
     NoJobsAlert
+  },
+  computed: {
+    lastPost: function() {
+      return Object.keys(this.posts).length - 1;
+    }
   }
 };
 </script>
@@ -31,7 +36,14 @@ export default {
 <template>
   <section class="pb-10">
     <no-jobs-alert v-if="posts.length === 0" />
-    <job-item v-else v-for="post in posts" :key="post.slug" :post="post" />
+    <job-item
+      v-else
+      v-for="(post, index) in posts"
+      :key="post.slug"
+      :post="post"
+      :lastPost="index === lastPost"
+      :index="index"
+    />
   </section>
 </template>
 

@@ -5,6 +5,14 @@ export default {
     post: {
       type: Object,
       required: true
+    },
+    lastPost: {
+      type: Boolean,
+      required: false
+    },
+    index: {
+      type: Number,
+      required: true
     }
   },
   computed: {

@@ -41,7 +41,6 @@ export default {
           .then(res => {
             this.isLoading = false;
             this.post = res;
-            console.log(this.post.company.twitter);
           })
           .catch(() => {
             this.isLoading = false;
@@ -64,7 +63,6 @@ export default {
 </script>
 
 <template>
-  <!-- TODO: Change this into an actual spinner -->
   <loading-spinner v-if="isLoading" />
   <section v-else>
     <div class="border-b lg:px-4 md:px-20 bg-gray-100">
@@ -246,11 +244,6 @@ export default {
     </div>
   </section>
 </template>
-
-<style scoped>
-.company-image {
-}
-</style>
 
 <style>
 ul {

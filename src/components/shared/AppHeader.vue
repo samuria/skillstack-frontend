@@ -1,6 +1,6 @@
 <script>
 export default {
-  name: 'AppHeader'
+  name: "AppHeader"
 };
 </script>
 
@@ -20,13 +20,15 @@ export default {
           >
         </button>
 
-        <button
+        <router-link
+          to="/post/add"
+          tag="button"
           class="flex flex-row justify-center items-center item bg-indigo-600 text-white font-medium px-4 rounded w-40 sm:w-12 focus:outline-none"
         >
           <font-awesome-icon icon="plus" /><span class="sm:hidden pl-2"
             >New post</span
           >
-        </button>
+        </router-link>
       </div>
     </nav>
   </header>

@@ -27,19 +27,19 @@ const router = new Router({
       }))
     },
     {
-      path: '/add-job',
+      path: '/post/add',
       name: 'AddJob',
       component: () => import('@/components/pages/AddJob')
+    },
+    {
+      path: '/post/:slug',
+      name: 'JobDetails',
+      component: () => import('@/components/pages/JobDetails')
     },
     {
       path: '/tag/:slug',
       name: 'TagPosts',
       component: () => import('@/components/pages/TagPosts')
-    },
-    {
-      path: '/jobs/:slug',
-      name: 'JobDetails',
-      component: () => import('@/components/pages/JobDetails')
     }
   ]
 });

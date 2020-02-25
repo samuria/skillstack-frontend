@@ -1,18 +1,23 @@
 <script>
-import jobDetail from '@/mixins/jobDetail';
-// import JobTypeBadge from './JobTypeBadge';
+import jobDetail from "@/mixins/jobDetail";
 export default {
-  name: 'JobItem',
+  name: "JobItem",
   mixins: [jobDetail],
-  components: {
-    // JobTypeBadge
+  created() {
+    console.log(this.post.slug);
   }
 };
 </script>
 
 <template>
-  <router-link :to="'/jobs/' + post.slug"
-    ><div class="job-item flex flex-wrap py-4 px-6 rounded-l">
+  <router-link :to="'/post/' + post.slug"
+    ><div
+      class="job-item flex flex-wrap py-4 px-6 border border-l-4 border-b-0 hover:bg-gray-100"
+      :class="{
+        'border-b rounded-bl rounded-br': this.lastPost,
+        'rounded-tl rounded-tr': this.index === 0
+      }"
+    >
       <div class="mr-3 pt-1 sm:w-full md:pt-2">
         <img
           class="company-image"
@@ -52,13 +57,6 @@ export default {
 
 <style scoped>
 .job-item {
-  background-color: #fafafa;
-  border-bottom: 1px solid #e4e6e8;
-  border-left: 4px solid transparent;
-}
-
-.job-item:hover {
-  background-color: white;
   border-left-color: #5a67d8;
 }
 
