@@ -1,6 +1,6 @@
 <script>
-import { mapActions } from "vuex";
-import jobInfoMixin from "@/mixins/jobInfoMixin";
+import { mapActions } from 'vuex';
+import jobInfoMixin from '@/mixins/jobInfoMixin';
 
 export default {
   props: {
@@ -33,7 +33,7 @@ export default {
   },
 
   methods: {
-    ...mapActions(["fetchBySlug"]),
+    ...mapActions(['fetchBySlug']),
 
     fetchData() {
       if (!this.preview) {
@@ -51,7 +51,7 @@ export default {
   },
   watch: {
     $route(from, to) {
-      if (to.name === "jobDetails" && from.params.slug !== to.params.slug) {
+      if (to.name === 'jobDetails' && from.params.slug !== to.params.slug) {
         this.fetchData();
       }
     }
