@@ -19,36 +19,38 @@ export default {
 <template>
   <section class="pt-8 pb-2">
     <div class="flex flex-wrap justify-between font-medium">
-      <div class="w-full lg:w-2/6">
+      <div class="w-full md:w-3/6">
         <ul
-          class="flex flex-wrap items-center -mx-1 text-xs lg:text-sm text-gray-600 list-none pl-0"
+          class="flex flex-wrap items-center -mx-1 text-xs lg:text-sm text-gray-600 list-none px-2 py-2"
         >
-          <li
-            v-for="(period, index) in PERIODS"
+          <router-link
+            :to="`/${period.slug}`"
+            v-for="period in PERIODS"
+            :key="period.type"
+            tag="li"
+            :class="{
+              'bg-white text-blue-600 shadow-sm': activePeriod === period.type
+            }"
+            class="text-center flex-1 md:w-1/3 mx-px py-3 rounded cursor-pointer select-none border border-gray-200"
+            >{{ period.text }}</router-link
+          >
+          <!-- <li
+            v-for="period in PERIODS"
             :key="period.type"
             :class="{
-              'bg-indigo-600 text-white': activePeriod === period.type,
-              'rounded-l': index === 0,
-              'rounded-r': index === 2
+              'bg-white text-blue-600': activePeriod === period.type
             }"
-            class="text-center flex-1 md:w-1/3 mx-px bg-gray-300 "
-          >
-            <router-link
-              :to="`/${period.slug}`"
-              class="py-3 block font-medium"
-              >{{ period.text }}</router-link
-            >
-          </li>
+            class="text-center flex-1 md:w-1/3 mx-px bg-gray-300 bg-white"
+          ></li> -->
         </ul>
       </div>
       <div
-        class="flex justify-end w-full lg:w-1/6 text-xs lg:text-sm text-gray-600"
+        class="flex flex-wrap justify-end items-center w-full md:w-1/6 text-xs lg:text-sm text-white"
       >
         <router-link
           to="/#"
-          class="w-full text-center py-3 rounded mt-3 lg:m-0 bg-gray-200"
-          ><font-awesome-icon icon="plus" size="sm" /> See all
-          posts</router-link
+          class="w-full align-middle text-center py-3 rounded mt-3 lg:m-0 bg-indigo-600"
+          ><span>See all posts</span></router-link
         >
       </div>
     </div>

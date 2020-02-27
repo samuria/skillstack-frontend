@@ -55,14 +55,14 @@ export default {
 </script>
 
 <template>
-  <div class="container">
+  <section>
     <h2 class="text-lg font-semibold">Latest posts</h2>
     <job-period-selector />
     <div class="pt-4" :style="{ minHeight: '500px' }">
       <loading-spinner v-if="isLoading" />
       <job-list v-else :posts="recentPosts" />
     </div>
-  </div>
+  </section>
 </template>
 
 <style scoped>

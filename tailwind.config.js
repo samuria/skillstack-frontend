@@ -5,7 +5,7 @@ module.exports = {
     screens: {
       sm: { max: '767px' },
       md: { min: '768px' },
-      lg: { min: '960px', max: '1289px' },
+      lg: { min: '960px' },
       xl: { min: '1289px' }
     },
     extend: {
@@ -14,10 +14,10 @@ module.exports = {
         width: 'width',
         spacing: 'margin, padding'
       }
+    },
+    fontFamily: {
+      sans: ['Inter', ...defaultTheme.fontFamily.sans]
     }
-    // fontFamily: {
-    //   sans: ['Montserrat', ...defaultTheme.fontFamily.sans]
-    // }
   },
   corePlugins: {
     container: false

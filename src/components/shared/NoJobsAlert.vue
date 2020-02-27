@@ -4,9 +4,12 @@ export default {};
 
 <template>
   <div
-    class="text-gray-700 border-2 bg-indigo-100 border-blue-indigo p-5 font-medium rounded text-center"
+    class="bg-blue-100 rounded border border-blue-300 text-blue-700 px-6 py-4"
+    role="alert"
   >
-    <p>No jobs found.</p>
+    <p class="text-sm text-center">
+      No posts found for this period.
+    </p>
   </div>
 </template>
 

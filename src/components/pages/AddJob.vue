@@ -11,12 +11,14 @@ export default {
 
 <template>
   <section>
-    <div class="border-b lg:px-4 md:px-20 bg-gray-100">
+    <div class="lg:px-4 md:px-20 bg-white">
       <div class="container">
         <div class="flex flex-wrap py-16">
           <div class="w-full md:w-2/3">
             <h2 class="text-xl md:text-2xl font-medium text-gray-700">
-              <font-awesome-icon icon="plus" /> Post a new job
+              <font-awesome-icon icon="plus" /><span class="pl-2"
+                >Post a new job</span
+              >
             </h2>
           </div>
         </div>
