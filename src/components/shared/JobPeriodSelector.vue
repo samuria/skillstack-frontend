@@ -18,8 +18,8 @@ export default {
 
 <template>
   <section class="pt-8 pb-2">
-    <div class="flex flex-wrap justify-between font-medium">
-      <div class="w-full lg:w-3/6">
+    <div class="flex flex-wrap justify-between font-bold">
+      <div class="w-full md:w-3/6">
         <ul
           class="flex flex-wrap items-center -mx-1 text-xs lg:text-sm text-gray-600 list-none px-2 py-2 bg-gray-200 rounded"
         >
@@ -45,7 +45,7 @@ export default {
         </ul>
       </div>
       <div
-        class="flex flex-wrap justify-end items-center w-full lg:w-1/6 text-xs lg:text-sm text-white"
+        class="flex flex-wrap justify-end items-center w-full md:w-1/6 text-xs lg:text-sm text-white"
       >
         <router-link
           to="/#"
