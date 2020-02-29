@@ -91,11 +91,7 @@ export default {
           >
             Description
           </label>
-          <vue-editor
-            id="grid-description"
-            v-model="formData.description"
-            class="bg-white"
-          />
+          <vue-editor id="grid-description" v-model="formData.description" />
         </div>
         <div class="mb-6">
           <label

@@ -15,7 +15,7 @@ export default {
   <div class="main">
     <app-header />
     <app-banner v-if="$route.meta.hasBanner" />
-    <main class="bg-gray-100">
+    <main>
       <router-view />
     </main>
   </div>

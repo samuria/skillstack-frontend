@@ -1,7 +1,7 @@
 <script>
-import jobDetail from '@/mixins/jobDetail';
+import jobDetail from "@/mixins/jobDetail";
 export default {
-  name: 'JobItem',
+  name: "JobItem",
   mixins: [jobDetail],
   created() {
     console.log(this.post.slug);
@@ -12,7 +12,7 @@ export default {
 <template>
   <router-link :to="'/post/' + post.slug"
     ><div
-      class="job-item flex flex-wrap py-4 px-6 border border-l-4 border-b-0 bg-white"
+      class="job-item flex flex-wrap py-4 px-6 border border-l-4 border-b-0 hover:bg-gray-100"
       :class="{
         'border-b rounded-bl rounded-br': this.lastPost,
         'rounded-tl rounded-tr': this.index === 0

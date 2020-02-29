@@ -65,7 +65,7 @@ export default {
 <template>
   <loading-spinner v-if="isLoading" />
   <section v-else>
-    <div class="lg:px-4 md:px-20 bg-white">
+    <div class="border-b lg:px-4 md:px-20 bg-gray-100">
       <div class="container">
         <div class="flex flex-wrap py-16">
           <div class="w-full md:w-2/3">
@@ -97,13 +97,14 @@ export default {
         <article>
           <div class="flex flex-wrap">
             <div class="flex flex-col w-full md:w-4/6">
-              <img
-                class="company-image"
-                v-lazy="post.company.logo"
-                :alt="post.company.alt"
-                width="100"
-              />
-
+              <div class="flex justify-center">
+                <img
+                  class="company-image"
+                  v-lazy="post.company.logo"
+                  :alt="post.company.alt"
+                  width="100"
+                />
+              </div>
               <div>
                 <h3 class="mt-8 text-xl text-gray-800">
                   {{ post.company.name }}
