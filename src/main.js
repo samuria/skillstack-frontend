@@ -8,8 +8,8 @@ import VueLazyload from 'vue-lazyload';
 Vue.use(VueLazyload);
 
 // Import styles
-require('./assets/styles/responsive.css');
-require('./assets/styles/main.css');
+// require('./assets/styles/responsive.css');
+// require('./assets/styles/main.css');
 
 // Loading spinner
 import LoadingSpinner from './components/shared/LoadingSpinner';
@@ -34,7 +34,8 @@ import {
   faMapMarkerAlt,
   faTags,
   faEnvelope,
-  faArrowRight
+  faArrowRight,
+  faPlusCircle
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { faTwitter, faLinkedin } from '@fortawesome/free-brands-svg-icons';
@@ -52,7 +53,8 @@ library.add(
   faTags,
   faEnvelope,
   faLinkedin,
-  faArrowRight
+  faArrowRight,
+  faPlusCircle
 );
 
 Vue.component('font-awesome-icon', FontAwesomeIcon);

@@ -1,19 +1,19 @@
 <script>
-import AppHeader from './components/shared/AppHeader';
-import AppBanner from './components/shared/AppBanner';
+import AppNavigation from "./components/shared/AppNavigation";
+import AppBanner from "./components/shared/AppBanner";
 
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    AppHeader,
+    AppNavigation,
     AppBanner
   }
 };
 </script>
 
 <template>
-  <div class="main">
-    <app-header />
+  <div class="main antialiased">
+    <app-navigation />
     <app-banner v-if="$route.meta.hasBanner" />
     <main>
       <router-view />
