@@ -1,6 +1,6 @@
 <script>
-import { mapActions } from "vuex";
-import JobListingWithFilters from "../shared/JobListingWithFilters";
+import { mapActions } from 'vuex';
+import JobListingWithFilters from '../shared/JobListingWithFilters';
 
 export default {
   components: {
@@ -22,7 +22,7 @@ export default {
   },
 
   methods: {
-    ...mapActions(["fetchByTag"]),
+    ...mapActions(['fetchByTag']),
     handleSearch() {
       this.fetchByTag(this.slug)
         .then(res => {
@@ -53,7 +53,11 @@ export default {
         <div class="flex flex-wrap py-16">
           <div class="w-full md:w-2/3">
             <h2 class="text-xl md:text-2xl font-medium text-gray-700">
-              Jobs tagged <span class="font-semibold">[{{ this.slug }}]</span>
+              Jobs tagged
+              <span
+                class="text-sm font-medium bg-indigo-100 text-indigo-500 px-2 py-1 rounded border border-indigo-300 hover:border-indigo-400 hover:text-indigo-600"
+                >{{ this.slug }}</span
+              >
             </h2>
             <h3>
               <span class="text-gray-500">

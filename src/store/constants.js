@@ -12,8 +12,8 @@ export const JOB_TYPE_MAP = {
 };
 export const PERIODS = [
   { type: 'daily', text: 'Today', slug: 'today' },
-  { type: 'weekly', text: 'This week', slug: 'week' },
-  { type: 'monthly', text: 'This month', slug: 'month', isDefault: true }
+  { type: 'weekly', text: 'Week', slug: 'week' },
+  { type: 'monthly', text: 'Month', slug: 'month', isDefault: true }
 ];
 export const JOB_TYPES_FOR_DROPDOWN = [
   {

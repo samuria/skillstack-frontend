@@ -1,8 +1,13 @@
 <script>
 import jobDetail from '@/mixins/jobDetail';
+import PostTags from './PostTags';
+
 export default {
   name: 'JobItem',
   mixins: [jobDetail],
+  components: {
+    PostTags
+  },
   created() {
     console.log(this.post.slug);
   }
@@ -12,7 +17,7 @@ export default {
 <template>
   <router-link :to="'/post/' + post.slug"
     ><div
-      class="job-item flex flex-wrap py-4 px-6 border border-l-4 border-b-0 bg-white"
+      class="job-item flex flex-wrap py-4 px-6 border border-l-4 border-b-0 hover:bg-gray-100"
       :class="{
         'border-b rounded-bl rounded-br': this.lastPost,
         'rounded-tl rounded-tr': this.index === 0
@@ -35,13 +40,7 @@ export default {
           <span class="text-gray-600">{{ post.location }}</span>
         </h3>
         <div class="flex flex-wrap -ml-1">
-          <router-link
-            v-for="tag in post.tags"
-            :key="tag.name"
-            :to="'/tag/' + tag.slug"
-            class="text-xs font-medium bg-indigo-100 text-indigo-500 rounded-sm ml-1 p-1 hover:text-indigo-600"
-            >{{ tag.name }}</router-link
-          >
+          <post-tags :tags="post.tags" />
         </div>
         <div class="text-xs mt-2">
           <span class="text-gray-900 text-pink-700 font-semibold">{{

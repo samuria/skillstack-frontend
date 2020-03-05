@@ -1,6 +1,7 @@
 <script>
 import { mapActions } from 'vuex';
 import jobInfoMixin from '@/mixins/jobInfoMixin';
+import PostTags from '../shared/PostTags';
 
 export default {
   props: {
@@ -16,6 +17,11 @@ export default {
     }
   },
   mixins: [jobInfoMixin],
+
+  components: {
+    PostTags
+  },
+
   data() {
     return {
       post: null,
@@ -65,7 +71,7 @@ export default {
 <template>
   <loading-spinner v-if="isLoading" />
   <section v-else>
-    <div class="lg:px-4 md:px-20 bg-white">
+    <div class="border-b lg:px-4 md:px-20 bg-gray-100">
       <div class="container">
         <div class="flex flex-wrap py-16">
           <div class="w-full md:w-2/3">
@@ -97,13 +103,14 @@ export default {
         <article>
           <div class="flex flex-wrap">
             <div class="flex flex-col w-full md:w-4/6">
-              <img
-                class="company-image"
-                v-lazy="post.company.logo"
-                :alt="post.company.alt"
-                width="100"
-              />
-
+              <div class="flex justify-center">
+                <img
+                  class="company-image"
+                  v-lazy="post.company.logo"
+                  :alt="post.company.alt"
+                  width="100"
+                />
+              </div>
               <div>
                 <h3 class="mt-8 text-xl text-gray-800">
                   {{ post.company.name }}
@@ -216,13 +223,14 @@ export default {
                   <div class="ml-5 w-11/12">
                     <span class="font-medium"> Tags </span><br />
                     <div class="flex flex-wrap -ml-1 mt-2">
-                      <router-link
+                      <!-- <router-link
                         v-for="tag in post.tags"
                         :key="tag.name"
                         :to="'/tag/' + tag.slug"
                         class="text-xs font-medium bg-indigo-100 text-indigo-500 rounded-sm ml-1 p-1 hover:text-indigo-600"
                         >{{ tag.name }}</router-link
-                      >
+                      > -->
+                      <post-tags :tags="post.tags" />
                     </div>
                   </div>
                 </div>
