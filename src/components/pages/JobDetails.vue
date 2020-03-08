@@ -1,7 +1,7 @@
 <script>
-import { mapActions } from 'vuex';
-import jobInfoMixin from '@/mixins/jobInfoMixin';
-import PostTags from '../shared/PostTags';
+import { mapActions } from "vuex";
+import jobInfoMixin from "@/mixins/jobInfoMixin";
+import PostTags from "../shared/PostTags";
 
 export default {
   props: {
@@ -39,7 +39,7 @@ export default {
   },
 
   methods: {
-    ...mapActions(['fetchBySlug']),
+    ...mapActions(["fetchBySlug"]),
 
     fetchData() {
       if (!this.preview) {
@@ -57,7 +57,7 @@ export default {
   },
   watch: {
     $route(from, to) {
-      if (to.name === 'jobDetails' && from.params.slug !== to.params.slug) {
+      if (to.name === "jobDetails" && from.params.slug !== to.params.slug) {
         this.fetchData();
       }
     }
@@ -71,15 +71,15 @@ export default {
 <template>
   <loading-spinner v-if="isLoading" />
   <section v-else>
-    <div class="border-b lg:px-4 md:px-20 bg-gray-100">
+    <div class="border-b lg:px-4 md:px-20 bg-gray-800">
       <div class="container">
-        <div class="flex flex-wrap py-16">
+        <div class="flex flex-wrap py-16 text-white">
           <div class="w-full md:w-2/3">
-            <h2 class="text-xl md:text-2xl font-medium text-gray-700">
+            <h2 class="text-xl md:text-2xl font-medium">
               {{ post.position }}
             </h2>
             <h3>
-              <span class="text-gray-700">
+              <span class="text-gray-400">
                 {{ post.type }}
               </span>
             </h3>
@@ -88,7 +88,7 @@ export default {
             <a
               :href="'//' + post.company.twitter"
               target="_blank"
-              class="md:float-right py-2 px-4 justify-center items-center text-gray-700 border-2 border-blue-400 hover:bg-blue-400 hover:text-gray-100 font-medium rounded focus:outline-none"
+              class="md:float-right py-2 px-4 justify-center items-center border-2 border-blue-400 hover:bg-blue-400 hover:text-gray-100 font-medium rounded focus:outline-none  @apply transition duration-200 ease-in-out"
             >
               <font-awesome-icon :icon="['fab', 'twitter']" /><span class="pl-2"
                 >Follow</span
@@ -236,7 +236,7 @@ export default {
                 </div>
                 <div class="w-full border mt-4">
                   <button
-                    class="w-full py-3 flex flex-row justify-center items-center item bg-indigo-600 text-white font-medium px-4 rounded focus:outline-none"
+                    class="w-full py-3 flex flex-row justify-center items-center item bg-indigo-600 hover:bg-indigo-700 text-white font-medium px-4 rounded focus:outline-none"
                   >
                     <font-awesome-icon icon="envelope" /><span class=" pl-2"
                       >Apply via email</span

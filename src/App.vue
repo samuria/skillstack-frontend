@@ -22,3 +22,10 @@ export default {
 </template>
 
 <style src="./assets/styles/tailwind.css"></style>
+
+<style>
+a,
+button {
+  @apply transition duration-200 ease-in-out;
+}
+</style>

@@ -49,7 +49,7 @@ export default {
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
         <div class="flex items-center w-full">
-          <div class="flex flex-shrink-0 items-center">
+          <router-link to="/" class="flex flex-shrink-0 items-center">
             <img
               class="block h-8 w-auto"
               src="@/assets/images/logo.svg"
@@ -59,7 +59,7 @@ export default {
               class="hidden lg:block h-8 w-auto text-gray-100 font-bold ml-2 select-none text-xl hidden lg:block"
               >skillstack</span
             >
-          </div>
+          </router-link>
           <div class="hidden md:block w-full flex">
             <div class="ml-10 flex items-baseline justify-center">
               <a
@@ -104,8 +104,10 @@ export default {
                 />
               </svg>
             </button>
-            <button
-              class="ml-4 flex items-center text-sm font-medium text-indigo-100 px-4 py-2 rounded-md bg-indigo-600 focus:outline-none"
+            <router-link
+              to="/post/add"
+              tag="button"
+              class="ml-4 flex items-center text-sm font-medium text-indigo-100 px-4 py-2 rounded-md bg-indigo-600 focus:outline-none hover:bg-indigo-700"
             >
               <svg width="14" height="14" viewBox="0 0 14 14">
                 <path
@@ -117,7 +119,7 @@ export default {
               </svg>
 
               <span class="ml-2">New Job</span>
-            </button>
+            </router-link>
           </div>
         </div>
         <div class="-mr-2 flex md:hidden">
@@ -173,7 +175,9 @@ export default {
           class="mt-1 block px-3 py-2 rounded-md text-base font-medium text-gray-300 hover:text-white hover:bg-gray-700 focus:outline-none focus:text-white focus:bg-gray-700"
           >Favourites</a
         >
-        <button
+        <router-link
+          to="post/add"
+          tag="button"
           class="mt-1 w-full flex items-center justify-center text-sm font-medium text-white px-4 py-2 rounded-md bg-indigo-600 focus:outline-none"
         >
           <svg width="14" height="14" viewBox="0 0 14 14">
@@ -186,10 +190,13 @@ export default {
           </svg>
 
           <span class="ml-2">New Job</span>
-        </button>
+        </router-link>
       </div>
     </div>
   </nav>
 </template>
 
-<style scoped></style>
+<style scoped>
+button {
+}
+</style>

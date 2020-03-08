@@ -1,7 +1,7 @@
 <script>
-import { VueEditor } from 'vue2-editor';
-import LocationSelect from './LocationSelect';
-import { JOB_TYPES_FOR_DROPDOWN } from '../../store/constants';
+import { VueEditor } from "vue2-editor";
+import LocationSelect from "./LocationSelect";
+import { JOB_TYPES_FOR_DROPDOWN } from "../../store/constants";
 
 export default {
   components: {
@@ -14,20 +14,20 @@ export default {
       isPreview: false,
       isSaving: false,
       formData: {
-        position: '',
-        description: '',
-        apply_email: '',
-        apply_url: '',
-        location: '',
+        position: "",
+        description: "",
+        apply_email: "",
+        apply_url: "",
+        location: "",
         type: null,
-        tags: '',
+        tags: "",
         company: {
-          name: '',
-          email: '',
-          logo: '',
-          website: '',
-          twitter: '',
-          linkedin: ''
+          name: "",
+          email: "",
+          logo: "",
+          website: "",
+          twitter: "",
+          linkedin: ""
         }
       },
       type: JOB_TYPES_FOR_DROPDOWN[0],
@@ -260,7 +260,7 @@ export default {
         <router-link
           to="/post/add"
           tag="button"
-          class="flex flex-row justify-center items-center item bg-indigo-600 text-white font-bold px-4 py-3 rounded w-40 sm:w-12 focus:outline-none"
+          class="flex flex-row justify-center items-center item bg-indigo-600 hover:bg-indigo-700 text-white font-bold px-4 py-3 rounded w-40 sm:w-12 focus:outline-none"
         >
           <span class="sm:hidden pr-2">Preview</span
           ><font-awesome-icon icon="arrow-right" />
