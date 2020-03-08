@@ -1,9 +1,9 @@
 <script>
-// import RecentJobsList from "../shared/RecentJobsList";
+import RecentJobsList from "../shared/RecentJobsList";
 export default {
   name: "Home",
   components: {
-    // RecentJobsList
+    RecentJobsList
   }
 };
 </script>
@@ -21,13 +21,12 @@ export default {
       </div>
     </div>
   </section> -->
-  <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8 bg-gray-200">
-    <!-- Replace with your content -->
-    <div class="px-4 py-6 sm:px-0">
-      <div class="rounded-lg h-64"></div>
+  <article class="max-w-7xl mx-auto py-24 px-6 lg:px-8 bg-gray-200">
+    <div class="container">
+      <recent-jobs-list />
     </div>
     <!-- /End replace -->
-  </div>
+  </article>
 </template>
 
 <style scoped></style>

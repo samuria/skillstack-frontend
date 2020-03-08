@@ -11,9 +11,9 @@ export const JOB_TYPE_MAP = {
   4: 'Freelance'
 };
 export const PERIODS = [
-  { type: 'daily', text: 'Today', slug: 'today' },
-  { type: 'weekly', text: 'Week', slug: 'week' },
-  { type: 'monthly', text: 'Month', slug: 'month', isDefault: true }
+  { type: 'daily', text: 'Last 24 hours', slug: 'today' },
+  { type: 'weekly', text: 'Last 7 days', slug: 'week' },
+  { type: 'monthly', text: 'Last month', slug: 'month', isDefault: true }
 ];
 export const JOB_TYPES_FOR_DROPDOWN = [
   {

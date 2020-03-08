@@ -1,11 +1,11 @@
 <script>
-import { mapState, mapActions } from 'vuex';
-import JobList from './JobList';
-import JobPeriodSelector from './JobPeriodSelector';
-import { PERIODS } from '@/store/constants';
+import { mapState, mapActions } from "vuex";
+import JobList from "./JobList";
+import JobPeriodSelector from "./JobPeriodSelector";
+import { PERIODS } from "@/store/constants";
 
 export default {
-  name: 'RecentJobsList',
+  name: "RecentJobsList",
   components: {
     JobList,
     JobPeriodSelector
@@ -13,14 +13,14 @@ export default {
   data() {
     return {
       isLoading: false,
-      defaultTab: ''
+      defaultTab: ""
     };
   },
   computed: {
-    ...mapState(['recentPosts', 'activePeriod'])
+    ...mapState(["recentPosts", "activePeriod"])
   },
   methods: {
-    ...mapActions(['fetchRecentJobs', 'setPeriod']),
+    ...mapActions(["fetchRecentJobs", "setPeriod"]),
     fetch() {
       this.isLoading = true;
 
@@ -56,9 +56,11 @@ export default {
 
 <template>
   <section>
-    <h2 class="text-lg font-semibold">Latest posts</h2>
-    <job-period-selector />
-    <div class="pt-4" :style="{ minHeight: '500px' }">
+    <div class="sm:mt-32 py-6 flex justify-between">
+      <h3 class="font-medium text-xl select-none">Latest posts</h3>
+      <job-period-selector />
+    </div>
+    <div :style="{ minHeight: '500px' }">
       <loading-spinner v-if="isLoading" />
       <job-list v-else :posts="recentPosts" />
     </div>

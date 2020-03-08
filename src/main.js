@@ -8,8 +8,8 @@ import VueLazyload from 'vue-lazyload';
 Vue.use(VueLazyload);
 
 // Import styles
-// require('./assets/styles/responsive.css');
-// require('./assets/styles/main.css');
+require('./assets/styles/responsive.css');
+require('./assets/styles/main.css');
 
 // Loading spinner
 import LoadingSpinner from './components/shared/LoadingSpinner';
