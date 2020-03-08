@@ -45,10 +45,10 @@ export default {
       </div>
     </nav>
   </header> -->
-  <nav :x-data="open" class="bg-gray-800">
+  <nav :x-data="open" class="bg-gray-800 border-b border-gray-700">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex items-center justify-between h-16">
-        <div class="flex items-center">
+        <div class="flex items-center w-full">
           <div class="flex flex-shrink-0 items-center">
             <img
               class="block h-8 w-auto"
@@ -60,8 +60,8 @@ export default {
               >skillstack</span
             >
           </div>
-          <div class="hidden md:block">
-            <div class="ml-10 flex items-baseline">
+          <div class="hidden md:block w-full flex">
+            <div class="ml-10 flex items-baseline justify-center">
               <a
                 href="#"
                 class="px-3 py-2 rounded-md text-sm font-medium text-white bg-gray-900 focus:outline-none focus:text-white focus:bg-gray-700"
@@ -85,7 +85,7 @@ export default {
             </div>
           </div>
         </div>
-        <div class="hidden md:block">
+        <div class="flex-shrink-0 hidden md:block">
           <div class="ml-4 flex items-center md:ml-6">
             <button
               class="p-1 border-2 border-transparent text-gray-400 rounded-full hover:text-white focus:outline-none focus:text-white focus:bg-gray-700"

@@ -21,10 +21,10 @@ export default {
       </div>
     </div>
   </section> -->
-  <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8 bg-gray-200">
+  <div class="max-w-7xl mx-auto py-24 sm:px-6 lg:px-8 bg-gray-200">
     <!-- Replace with your content -->
     <div class="px-4 py-6 sm:px-0">
-      <div class="rounded-lg h-64"></div>
+      <h3 class="font-medium text-lg">Latest posts</h3>
     </div>
     <!-- /End replace -->
   </div>
