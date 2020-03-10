@@ -70,7 +70,7 @@ export default {
 
 <template>
   <loading-spinner v-if="isLoading" />
-  <section v-else>
+  <section v-else class="bg-gray-200">
     <div class="border-b lg:px-4 md:px-20 bg-gray-800">
       <div class="container">
         <div class="flex flex-wrap py-16 text-white">
@@ -223,13 +223,6 @@ export default {
                   <div class="ml-5 w-11/12">
                     <span class="font-medium"> Tags </span><br />
                     <div class="flex flex-wrap -ml-1 mt-2">
-                      <!-- <router-link
-                        v-for="tag in post.tags"
-                        :key="tag.name"
-                        :to="'/tag/' + tag.slug"
-                        class="text-xs font-medium bg-indigo-100 text-indigo-500 rounded-sm ml-1 p-1 hover:text-indigo-600"
-                        >{{ tag.name }}</router-link
-                      > -->
                       <post-tags :tags="post.tags" />
                     </div>
                   </div>

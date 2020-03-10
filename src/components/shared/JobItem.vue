@@ -7,9 +7,6 @@ export default {
   mixins: [jobDetail],
   components: {
     // PostTags
-  },
-  created() {
-    console.log(this.post.slug);
   }
 };
 </script>
@@ -59,7 +56,7 @@ export default {
           <h3 class="font-medium text-indigo-700">
             {{ post.position }}
           </h3>
-          <div class="pt-2 flex flex-row">
+          <div class="pt-2 flex flex-wrap">
             <h4 class="text-gray-600 flex items-center">
               <svg width="16" height="16" viewBox="0 0 16 16">
                 <path
@@ -75,7 +72,7 @@ export default {
               </svg>
               <span class="ml-2">{{ post.company.name }}</span>
             </h4>
-            <h4 class="ml-8 text-gray-600 flex items-center">
+            <h4 class="sm:w-full md:ml-8 text-gray-600 flex items-center">
               <svg width="14" height="17" viewBox="0 0 14 17">
                 <path
                   fill-rule="evenodd"
@@ -88,7 +85,7 @@ export default {
             </h4>
           </div>
         </div>
-        <div class="flex flex-col">
+        <div class="flex flex-col items-end">
           <div
             class="self-end bg-green-200 text-green-900 font-medium text-xs px-2 rounded-full"
           >
