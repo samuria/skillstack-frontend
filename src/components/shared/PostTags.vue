@@ -10,12 +10,12 @@ export default {
 </script>
 
 <template>
-  <div>
+  <div class="text-xs font-medium text-blue-600">
     <router-link
       v-for="tag in tags"
       :key="tag.name"
       :to="'/tag/' + tag.slug"
-      class="text-xs font-medium bg-indigo-100 text-indigo-500 ml-1 px-2 py-1 rounded border border-indigo-300 hover:border-indigo-400 hover:text-indigo-600"
+      class="inline-block bg-indigo-100 px-2 rounded-full ml-1 hover:bg-blue-200"
       >{{ tag.name }}</router-link
     >
   </div>

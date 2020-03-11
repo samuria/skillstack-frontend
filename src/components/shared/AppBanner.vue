@@ -17,9 +17,6 @@ export default {
     };
   },
   methods: {
-    handleChange(value) {
-      console.log(`selected ${value}`);
-    },
     filterOption(input, option) {
       return (
         option.componentOptions.children[0].text
@@ -103,13 +100,6 @@ export default {
           <span class="font-bold">Developers first.</span> You'll never receive
           recruiter spam or see fake job listings on our site.
         </p>
-        <!-- <h2 class="text-white text-xl font-semibold">
-          <span class="font-bold text-indigo-200 underline"
-            >Developers first.</span
-          >
-          You’ll never receive recruiter spam or see fake job listings on our
-          site.
-        </h2> -->
       </div>
       <div
         class="flex flex-wrap border-4 border-gray-100 mt-5 p-6 bg-white rounded-md shadow-xl"
@@ -117,14 +107,14 @@ export default {
         <div class="w-full flex-auto md:w-2/5">
           <input
             type="text"
-            class="w-full px-2 md:px-4 py-2 md:py-4 rounded bg-gray-200 text-gray-700"
+            class="w-full px-2 md:px-4 py-2 md:py-4 rounded bg-gray-200 text-gray-700 border outline-none focus:shadow-outline"
             placeholder="Position, company, skills..."
           />
         </div>
         <div class="w-full md:w-2/5 sm:my-3 md:mx-3">
           <input
             type="text"
-            class="w-full px-2 md:px-4 py-2 md:py-4 rounded bg-gray-200 text-gray-700"
+            class="w-full px-2 md:px-4 py-2 md:py-4 rounded bg-gray-200 text-gray-700 border outline-none focus:shadow-outline"
             placeholder="Location"
           />
         </div>

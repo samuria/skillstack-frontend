@@ -1,6 +1,6 @@
 <script>
-import { mapActions } from 'vuex';
-import JobListingWithFilters from '../shared/JobListingWithFilters';
+import { mapActions } from "vuex";
+import JobListingWithFilters from "../shared/JobListingWithFilters";
 
 export default {
   components: {
@@ -22,7 +22,7 @@ export default {
   },
 
   methods: {
-    ...mapActions(['fetchByTag']),
+    ...mapActions(["fetchByTag"]),
     handleSearch() {
       this.fetchByTag(this.slug)
         .then(res => {
@@ -48,14 +48,16 @@ export default {
 
 <template>
   <section>
-    <div class="border-b lg:px-4 md:px-20 bg-gray-100">
+    <div class="border-b lg:px-4 md:px-20 bg-gray-800">
       <div class="container">
         <div class="flex flex-wrap py-16">
           <div class="w-full md:w-2/3">
-            <h2 class="text-xl md:text-2xl font-medium text-gray-700">
+            <h2
+              class="flex items-center text-xl md:text-2xl font-medium text-white"
+            >
               Jobs tagged
               <span
-                class="text-sm font-medium bg-indigo-100 text-indigo-500 px-2 py-1 rounded border border-indigo-300 hover:border-indigo-400 hover:text-indigo-600"
+                class="inline-block text-xs font-medium text-blue-600 bg-blue-200 px-3 rounded-full ml-3"
                 >{{ this.slug }}</span
               >
             </h2>
