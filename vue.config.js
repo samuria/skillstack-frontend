@@ -1,5 +1,5 @@
 module.exports = {
   devServer: {
-    proxy: 'http://api.skillstack.com.au'
+    proxy: 'api.skillstack.com.au'
   }
 };
