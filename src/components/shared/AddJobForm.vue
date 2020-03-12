@@ -104,12 +104,4 @@ export default {
 .vue-editor {
   border-color: red;
 }
-
-code {
-  @apply text-xs font-medium bg-indigo-100 text-indigo-500 rounded-sm ml-1 p-1;
-}
-
-code:hover {
-  @apply text-indigo-600;
-}
 </style>
