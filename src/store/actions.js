@@ -3,7 +3,7 @@ import { cacheAdapterEnhancer } from 'axios-extensions';
 import * as constants from './constants';
 
 const http = axios.create({
-  baseURL: 'api.skillstack.com.au/',
+  baseURL: 'https://api.skillstack.com.au/',
   adapter: cacheAdapterEnhancer(axios.defaults.adapter)
 });
 
