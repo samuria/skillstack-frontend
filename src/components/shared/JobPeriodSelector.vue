@@ -1,18 +1,18 @@
 <script>
-import { mapState, mapActions } from "vuex";
-import { PERIODS } from "@/store/constants";
+import { mapState, mapActions } from 'vuex';
+import { PERIODS } from '@/store/constants';
 
 export default {
-  name: "JobPeriodSelector",
+  name: 'JobPeriodSelector',
 
   data() {
     return {
-      open: false
+      open: false,
     };
   },
 
   computed: {
-    ...mapState(["activePeriod"])
+    ...mapState(['activePeriod']),
   },
 
   created() {
@@ -20,21 +20,18 @@ export default {
   },
 
   methods: {
-    ...mapActions(["setPeriod"]),
+    ...mapActions(['setPeriod']),
 
-    onPeriodChanged(event) {
-      this.$router.push(event.target.value);
+    onPeriodChanged(value) {
+      const newRoute = PERIODS.find((period) => value === period.type).slug;
+      this.$router.push(newRoute);
     },
-
-    handleDropDownToggle() {
-      this.open = !this.open;
-    }
-  }
+  },
 };
 </script>
 
 <template>
-  <div class="inline-block relative">
+  <!-- <div class="inline-block relative">
     <div
       :x-data="open"
       @keydown.escape="handleDropDownToggle"
@@ -47,7 +44,7 @@ export default {
             type="button"
             class="inline-flex justify-center w-full rounded-md border border-gray-300 px-4 py-2 bg-white text-sm leading-5 font-medium text-gray-700 hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:bg-gray-50 active:text-gray-800 transition ease-in-out duration-150"
           >
-            {{ PERIODS.find(period => activePeriod === period.type).text }}
+            {{ PERIODS.find((period) => activePeriod === period.type).text }}
             <svg
               class="-mr-1 ml-2 h-5 w-5"
               fill="currentColor"
@@ -86,7 +83,28 @@ export default {
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
+  <a-select
+    class="selector"
+    :defaultValue="activePeriod"
+    style="width: 160px"
+    @change="onPeriodChanged"
+  >
+    <a-select-option
+      v-for="period in PERIODS"
+      :key="period.type"
+      :value="period.type"
+      >{{ period.text }}</a-select-option
+    >
+  </a-select>
 </template>
 
-<style scoped></style>
+<style scoped>
+.selector {
+  margin-left: 25px;
+}
+
+.form {
+  border: 1px solid red;
+}
+</style>

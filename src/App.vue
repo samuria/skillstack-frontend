@@ -1,18 +1,18 @@
 <script>
-import AppNavigation from "./components/shared/AppNavigation";
-import AppBanner from "./components/shared/AppBanner";
+import AppNavigation from './components/shared/AppNavigation';
+import AppBanner from './components/shared/AppBanner';
 
 export default {
-  name: "App",
+  name: 'App',
   components: {
     AppNavigation,
-    AppBanner
-  }
+    AppBanner,
+  },
 };
 </script>
 
 <template>
-  <div class="main antialiased">
+  <div class="main antialiased container">
     <app-navigation />
     <app-banner v-if="$route.meta.hasBanner" />
     <main>
@@ -21,11 +21,12 @@ export default {
   </div>
 </template>
 
-<style src="./assets/styles/tailwind.css"></style>
+<!-- <style src="./assets/styles/tailwind.css"></style> -->
 
-<style>
+<!--<style>
 a,
 button {
   @apply transition duration-200 ease-in-out;
 }
 </style>
+-->

@@ -237,6 +237,7 @@ body.boxed {
 @media only screen and (min-width: 768px) and (max-width: 990px) {
   .container {
     width: 100%;
+    padding: 0 24px;
   }
   .container .column,
   .container .columns {

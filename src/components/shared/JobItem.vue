@@ -1,55 +1,15 @@
 <script>
-import jobDetail from "@/mixins/jobDetail";
-// import PostTags from "./PostTags";
+import jobDetail from '@/mixins/jobDetail';
 
 export default {
-  name: "JobItem",
+  name: 'JobItem',
   mixins: [jobDetail],
-  components: {
-    // PostTags
-  }
+  components: {},
 };
 </script>
 
 <template>
-  <!-- <router-link :to="'/post/' + post.slug"
-    ><div
-      class="job-item flex flex-wrap py-4 px-6 border border-l-4 border-b-0 hover:bg-gray-100"
-      :class="{
-        'border-b rounded-bl rounded-br': this.lastPost,
-        'rounded-tl rounded-tr': this.index === 0
-      }"
-    >
-      <div class="mr-3 pt-1 sm:w-full md:pt-2">
-        <img
-          class="company-image"
-          v-lazy="company.logo"
-          :alt="company.alt"
-          width="48"
-        />
-      </div>
-      <div>
-        <h2 class="text-blue-700 font-medium">
-          {{ post.position }}
-        </h2>
-        <h3 class="text-xs">
-          <span class="text-gray-900">{{ company.name }}</span> ·
-          <span class="text-gray-600">{{ post.location }}</span>
-        </h3>
-        <div class="flex flex-wrap -ml-1">
-          <post-tags :tags="post.tags" />
-        </div>
-        <div class="text-xs mt-2">
-          <span class="text-gray-900 text-pink-700 font-semibold">{{
-            timeago
-          }}</span>
-          ·
-          <span class="text-gray-600">{{ post.type }}</span>
-        </div>
-      </div>
-    </div></router-link
-  > -->
-  <router-link :to="'/post/' + post.slug">
+  <!-- <router-link :to="'/post/' + post.slug">
     <div class="px-6 py-4" :class="{ 'border-b': !lastPost }">
       <div class="flex justify-between text-sm">
         <div>
@@ -93,13 +53,7 @@ export default {
           </div>
           <div class="pt-2">
             <h4 class="text-gray-600 flex items-center">
-              <svg
-                width="20"
-                height="20"
-                viewBox="0 0 20 20"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
                 <path
                   d="M10 6V10L13 13L10 6ZM19 10C19 14.971 14.971 19 10 19C5.029 19 1 14.971 1 10C1 5.029 5.029 1 10 1C14.971 1 19 5.029 19 10Z"
                   stroke="#a0aec0"
@@ -115,15 +69,64 @@ export default {
         </div>
       </div>
     </div>
-  </router-link>
+  </router-link> -->
+  <!-- <router-link :to="'/post/' + post.slug" class="job-card">
+    <div>
+      <h3 class="position-title">{{ post.position }}</h3>
+      <p class="company-title">{{ post.company.name }}</p>
+      <a-tag v-for="tag in post.tags" :key="tag.name">{{ tag.name }}</a-tag>
+    </div>
+    <div class="card-right-content">
+      <div class="save-button">
+        <label style="margin-right: 8px;">Save</label><a-icon type="star" />
+      </div>
+      <p class="timeago">
+        {{ timeago }}
+      </p>
+    </div>
+  </router-link> -->
+  <a-list-item slot="renderItem" slot-scope="post" key="post.position">
+    <!-- <div class="save-button" slot="extra">
+      <label style="margin-right: 8px;">Save</label><a-icon type="star" />
+    </div> -->
+    <div class="card-right-content" slot="extra">
+      <div class="save-button"><a-icon class="save-icon" type="star" /></div>
+      <p class="timeago">
+        {{ timeago }}
+      </p>
+    </div>
+    <a-list-item-meta>
+      <router-link slot="title" :to="post.slug">{{
+        post.position
+      }}</router-link>
+      <a-avatar slot="avatar" shape="square" :size="64">
+        {{ post.company.name }}
+      </a-avatar>
+      <div slot="description">
+        <a-tag v-for="tag in post.tags" :key="tag.name">{{ tag.name }}</a-tag>
+      </div>
+    </a-list-item-meta>
+  </a-list-item>
 </template>
 
 <style scoped>
-.job-item {
-  border-left-color: #5a67d8;
+.save-button {
+  align-self: flex-end;
 }
 
-.job-item:hover h2 {
-  @apply text-blue-600;
+.save-icon {
+  font-size: 20px;
+}
+
+.card-right-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+  -webkit-user-select: none;
+}
+
+.timeago {
+  color: #8c8c8c;
 }
 </style>

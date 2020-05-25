@@ -9,5 +9,8 @@ export default {
   },
   [constants.SET_ACTIVE_PERIOD](state, period) {
     state.activePeriod = period;
-  }
+  },
+  [constants.SET_TAGS](state, tags) {
+    state.tags = tags;
+  },
 };
