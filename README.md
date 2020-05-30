@@ -1,4 +1,4 @@
-# EMSoft
+# Skillstack
 
 ## Project setup
 
