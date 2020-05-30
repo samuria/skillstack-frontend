@@ -4,16 +4,12 @@ export default {
   props: {
     post: {
       type: Object,
-      required: true
+      required: true,
     },
     lastPost: {
       type: Boolean,
-      required: false
+      required: false,
     },
-    index: {
-      type: Number,
-      required: true
-    }
   },
   computed: {
     detailsUrl() {
@@ -31,12 +27,12 @@ export default {
         1: 'full-time',
         2: 'part-time',
         3: 'internship',
-        4: 'freelance'
+        4: 'freelance',
       };
 
       return {
-        [CLASS_MAP[this.post.type]]: true
+        [CLASS_MAP[this.post.type]]: true,
       };
-    }
-  }
+    },
+  },
 };

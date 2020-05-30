@@ -3,13 +3,19 @@ import App from './App';
 import store from './store';
 import router from './router';
 
+// Setup Ant Design
+import 'ant-design-vue/dist/antd.css';
+import Antd from 'ant-design-vue';
+import { FormModel } from 'ant-design-vue';
+Vue.use(Antd);
+Vue.use(FormModel);
+
 // Setup image lazy loader
 import VueLazyload from 'vue-lazyload';
 Vue.use(VueLazyload);
 
 // Import styles
-require('./assets/styles/responsive.css');
-require('./assets/styles/main.css');
+require('./assets/styles/skeleton.css');
 
 // Loading spinner
 import LoadingSpinner from './components/shared/LoadingSpinner';
@@ -35,7 +41,7 @@ import {
   faTags,
   faEnvelope,
   faArrowRight,
-  faPlusCircle
+  faPlusCircle,
 } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/vue-fontawesome';
 import { faTwitter, faLinkedin } from '@fortawesome/free-brands-svg-icons';
@@ -64,5 +70,5 @@ new Vue({
   el: '#app',
   store,
   router,
-  render: h => h(App)
+  render: (h) => h(App),
 });

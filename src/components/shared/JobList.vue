@@ -29,6 +29,17 @@ export default {
     lastPost: function() {
       return Object.keys(this.posts).length - 1;
     }
+  },
+
+  data() {
+    return {
+      // pagination: {
+      //   onChange: (page) => {
+      //     console.log(page);
+      //   },
+      //   pageSize: 3,
+      // },
+    };
   }
 };
 </script>
@@ -36,14 +47,9 @@ export default {
 <template>
   <section class="rounded bg-white shadow">
     <no-jobs-alert v-if="posts.length === 0" />
-    <job-item
-      v-else
-      v-for="(post, index) in posts"
-      :key="post.slug"
-      :post="post"
-      :lastPost="index === lastPost"
-      :index="index"
-    />
+    <a-list v-else itemLayout="vertical" size="small" :dataSource="posts">
+      <job-item v-for="post in posts" :key="post.slug" :post="post" />
+    </a-list>
   </section>
 </template>
 

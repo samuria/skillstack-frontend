@@ -43,54 +43,7 @@ export default {
 </script>
 
 <template>
-  <!-- <section class="border-b py-12 lg:px-4 md:px-20 pt-10">
-    <div class="container">
-      <h2 class="text-3xl font-medium">Search</h2>
-      <div class="flex flex-wrap pt-4">
-        <div class="w-full flex-auto md:w-2/5">
-          <input
-            type="text"
-            class="w-full outline-none px-2 md:px-4 py-2 md:py-4 rounded text-gray-700 font-medium border-2 border-gray-400 hover:border-gray-500 focus:border-gray-700"
-            placeholder="Position, technology"
-            spellcheck="false"
-          />
-        </div>
-        <div class="w-full md:w-2/5 sm:my-3 md:mx-3">
-          <input
-            type="text"
-            class="w-full outline-none px-2 md:px-4 py-2 md:py-4 rounded text-gray-700 font-medium border-2 border-gray-400 hover:border-gray-500 focus:border-gray-700"
-            placeholder="Location"
-          />
-        </div>
-        <div class="w-full flex md:w-1/12">
-          <button
-            class="w-full bg-indigo-600 hover:bg-indigo-700 text-white rounded py-2"
-          >
-            <font-awesome-icon icon="search" />
-          </button>
-        </div>
-      </div>
-      <div class="flex mt-4 text-sm text-gray-700 -ml-1">
-        <a
-          href="#"
-          class="border-2 hover:border-gray-500 px-2 py-1 rounded ml-1"
-          v-for="tag in skillTags"
-          :key="tag"
-          >{{ tag }}</a
-        >
-      </div>
-      <div class="flex mt-1 text-sm text-gray-700 -ml-1">
-        <a
-          href="#"
-          class="border-2 hover:border-gray-500 px-2 py-1 rounded ml-1"
-          v-for="tag in locationTags"
-          :key="tag"
-          >{{ tag }}</a
-        >
-      </div>
-    </div>
-  </section> -->
-  <section class="banner h-56 px-4 pt-10 bg-gray-800">
+  <!-- <section class="banner h-56 px-4 pt-10 bg-gray-800">
     <div class="container">
       <div class="w-3/5">
         <h2 class="text-3xl font-bold leading-tight text-white">
@@ -147,15 +100,24 @@ export default {
         </div>
       </div>
     </div>
+  </section> -->
+  <section class="banner">
+    <h1>
+      Looking for a job in IT?
+    </h1>
+    <p>
+      Search among <span>24,482</span> offers from the best employers in
+      Australia.
+    </p>
+    <a-button type="primary">View jobs</a-button>
   </section>
 </template>
 
 <style scoped>
-/* .banner {
-  background: linear-gradient(#035581, #035581),
-    url(../../assets/images/hero-bg.jpg);
-  background-size: cover;
-  background-position-y: 25%;
-  background-blend-mode: multiply;
-} */
+.banner {
+  height: 200px;
+  background-color: #e1f6ff;
+  border-radius: 5px;
+  padding: 40px 40px;
+}
 </style>

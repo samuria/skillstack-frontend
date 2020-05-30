@@ -1,25 +1,27 @@
 <script>
-import { mapActions } from "vuex";
-import jobInfoMixin from "@/mixins/jobInfoMixin";
-import PostTags from "../shared/PostTags";
+import { mapActions } from 'vuex';
+import jobInfoMixin from '@/mixins/jobInfoMixin';
+import PostTags from '../shared/PostTags';
+import JobListingHeader from '../shared/JobListingHeader';
 
 export default {
   props: {
     preview: {
       type: Boolean,
       required: false,
-      default: false
+      default: false,
     },
     previewData: {
       type: Object,
       required: false,
-      default: () => ({})
-    }
+      default: () => ({}),
+    },
   },
   mixins: [jobInfoMixin],
 
   components: {
-    PostTags
+    JobListingHeader,
+    PostTags,
   },
 
   data() {
@@ -27,7 +29,7 @@ export default {
       post: null,
       isLoading: true,
       notFound: false,
-      relatedPosts: []
+      relatedPosts: [],
     };
   },
   computed: {
@@ -35,16 +37,16 @@ export default {
       return Object.keys(this.previewData).length
         ? this.previewData
         : this.post;
-    }
+    },
   },
 
   methods: {
-    ...mapActions(["fetchBySlug"]),
+    ...mapActions(['fetchBySlug']),
 
     fetchData() {
       if (!this.preview) {
         this.fetchBySlug(this.$route.params.slug)
-          .then(res => {
+          .then((res) => {
             this.isLoading = false;
             this.post = res;
           })
@@ -53,51 +55,28 @@ export default {
             this.notFound = true;
           });
       }
-    }
+    },
   },
   watch: {
     $route(from, to) {
-      if (to.name === "jobDetails" && from.params.slug !== to.params.slug) {
+      if (to.name === 'jobDetails' && from.params.slug !== to.params.slug) {
         this.fetchData();
       }
-    }
+    },
   },
   created() {
     this.fetchData();
-  }
+  },
 };
 </script>
 
 <template>
   <loading-spinner v-if="isLoading" />
   <section v-else class="bg-gray-200">
-    <div class="border-b lg:px-4 md:px-20 bg-gray-800">
-      <div class="container">
-        <div class="flex flex-wrap py-16 text-white">
-          <div class="w-full md:w-2/3">
-            <h2 class="text-xl md:text-2xl font-medium">
-              {{ post.position }}
-            </h2>
-            <h3>
-              <span class="text-gray-400">
-                {{ post.type }}
-              </span>
-            </h3>
-          </div>
-          <div class="w-auto md:w-1/3 sm:mt-6">
-            <a
-              :href="'//' + post.company.twitter"
-              target="_blank"
-              class="md:float-right py-2 px-4 justify-center items-center border-2 border-blue-400 hover:bg-blue-400 hover:text-gray-100 font-medium rounded focus:outline-none  @apply transition duration-200 ease-in-out"
-            >
-              <font-awesome-icon :icon="['fab', 'twitter']" /><span class="pl-2"
-                >Follow</span
-              >
-            </a>
-          </div>
-        </div>
-      </div>
+    <div class="border-b lg:px-4 md:px-20 bg-gray-800 h-48 flex items-center">
+      <div class="container"><job-listing-header :post="post" /></div>
     </div>
+    <!-- <job-listing-header /> -->
     <div class="lg:px-4 md:px-20 py-12">
       <div class="container">
         <article>

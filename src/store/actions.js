@@ -4,7 +4,7 @@ import * as constants from './constants';
 
 const http = axios.create({
   baseURL: 'https://api.skillstack.com.au/',
-  adapter: cacheAdapterEnhancer(axios.defaults.adapter)
+  adapter: cacheAdapterEnhancer(axios.defaults.adapter),
 });
 
 export default {
@@ -17,21 +17,28 @@ export default {
       .get(
         `/jobs?limit=${constants.RECENT_POST_COUNT}&period=${state.activePeriod}`
       )
-      .then(res => {
+      .then((res) => {
         commit(constants.SET_RECENT_POSTS, res.data);
         return res.data;
       });
   },
 
   fetchBySlug(_, slug) {
-    return http.get(`/jobs/${slug}`).then(res => res.data);
+    return http.get(`/jobs/${slug}`).then((res) => res.data);
   },
 
   fetchByTag(_, tag) {
-    return http.get(`/tags/${tag}/jobs`).then(res => res.data);
+    return http.get(`/tags/${tag}/jobs`).then((res) => res.data);
+  },
+
+  fetchAllTags({ commit }) {
+    return http.get('/tags').then((res) => {
+      commit(constants.SET_TAGS, res.data);
+      return res.data;
+    });
   },
 
   setPeriod({ commit }, period) {
     commit('SET_ACTIVE_PERIOD', period);
-  }
+  },
 };
