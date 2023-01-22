@@ -1,5 +1,7 @@
 # Skillstack
 
+This is the repository for the skillstack frontend. Visit https://github.com/samuria/skillstack-server to see the server-side source code.
+
 ## Project setup
 
 ```
